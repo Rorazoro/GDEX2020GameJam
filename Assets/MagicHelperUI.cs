@@ -19,7 +19,7 @@ public class MagicHelperUI : MonoBehaviour
         }
         else if (Controller.IsSpellActive)
         {
-            Text.text = "Right click to cancel";
+            Text.text = "Casting Spell: "+Controller.SpellId+"\nRight click to cancel";
         }
     }
 }

@@ -3,14 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class LevitatableObject : MonoBehaviour, IReceiveCast
+public class LevitatableObject : MonoBehaviour, ICastSpell
 {
+    static string SpellId = "159AB";
+
     public bool IsLevitating;
+    
     private Rigidbody rb;
     private DiscreteMagicController magicController;
 
-    public void CastSpell(DiscreteMagicController magicController, string spellId)
+
+    public void CastSpell(DiscreteMagicController magicController)
     {
+        this.magicController = magicController;
+        if (!magicController.SpellId.Equals(SpellId))
+        {
+            magicController.EndSpell();
+        }
+
         IsLevitating = !IsLevitating;
 
         if (IsLevitating)
