@@ -9,10 +9,10 @@ public class LevitatableObject : MonoBehaviour, ICastSpell
 
     public bool IsLevitating;
     public float MinY, MaxY;
+    public float LevitateRateMetersPerSecond;
 
     private Rigidbody rb;
     private DiscreteMagicController magicController;
-    private float distanceToObject;
 
     public void CastSpell(DiscreteMagicController magicController)
     {
@@ -37,7 +37,6 @@ public class LevitatableObject : MonoBehaviour, ICastSpell
     private void StartLevitating()
     {
         //disable gravity and freeze the object
-        distanceToObject = Vector3.Distance(magicController.transform.position, transform.position);
         rb.useGravity = false;
         rb.constraints = RigidbodyConstraints.FreezeAll;
         IsLevitating = true;
@@ -68,12 +67,26 @@ public class LevitatableObject : MonoBehaviour, ICastSpell
         if(magicController != null && magicController.IsSpellActive && IsLevitating)
         {
             // update y position of levitation
-            var screenPoint = Input.mousePosition;
-            screenPoint.z = distanceToObject;
-            float newY = Mathf.Clamp(Camera.main.ScreenToWorldPoint(screenPoint).y, MinY, MaxY);
+            //Vector3 posXZ = new Vector3(transform.position.x, 0, transform.position.z);
+            //Vector3 otherPosXZ = new Vector3(magicController.transform.position.x, 0, magicController.transform.position.z);
+            //float distanceXZ = Vector3.Distance(posXZ, otherPosXZ);
+
+            //var screenPoint = Input.mousePosition;
+            //screenPoint.z = distanceToObject;
+            //float newY = Mathf.Clamp(Camera.main.ScreenToWorldPoint(screenPoint).y, MinY, MaxY);
+            //transform.position = new Vector3(transform.position.x, newY, transform.position.z);
+
+
+            float maxDeltaMovement = Time.deltaTime * LevitateRateMetersPerSecond * Input.GetAxis("Mouse Y");
+
+            float newY = Mathf.Clamp(transform.position.y+ maxDeltaMovement, MinY, MaxY);
             transform.position = new Vector3(transform.position.x, newY, transform.position.z);
+
         }
     }
 
-   
+    public bool DoLockMouse()
+    {
+        return true;
+    }
 }

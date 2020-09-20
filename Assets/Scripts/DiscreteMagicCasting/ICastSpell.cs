@@ -8,6 +8,7 @@ public interface ICastSpell
     /// in yout implementation, listen to magicController.OnEndCast() to handle the spell cancellation
     void CastSpell(DiscreteMagicController magicController);
 
-    //return id for this spell
     string GetSpellId();
+
+    bool DoLockMouse();
 }

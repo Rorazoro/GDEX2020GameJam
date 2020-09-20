@@ -115,6 +115,10 @@ public class DiscreteMagicController : MonoBehaviour
                 {
                     spellCaster.CastSpell(this);
                     spellCast = true;
+                    if (spellCaster.DoLockMouse())
+                    {
+                        Cursor.lockState = CursorLockMode.Locked;
+                    }
                     //we can only cast one spell per pattern.
                     break;
                 }
