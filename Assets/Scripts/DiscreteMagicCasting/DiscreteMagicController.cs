@@ -11,21 +11,20 @@ public class DiscreteMagicController : MonoBehaviour
     public string SpellId = "";
     public Texture2D CursorTexture;
     public UnityEvent OnStartCast, OnEndCast, OnEndSpell;
+    public ICastSpell[] SpellCasters { get; private set; } = new ICastSpell[0];
 
 
-    private Camera currentCamera;
+
     private List<Transform> lineNodes = new List<Transform>();
     private LineRenderer lineRenderer;
     private Vector2 castPoint;
 
-    private ICastSpell[] spellCasters;
 
 
     void Start()
     {
         Cursor.SetCursor(CursorTexture, new Vector2(16, 16), CursorMode.Auto);
         lineRenderer = GetComponent<LineRenderer>();
-        currentCamera = Camera.main;
         lineRenderer.positionCount = 0;
     }
 
@@ -33,21 +32,21 @@ public class DiscreteMagicController : MonoBehaviour
     {
         if(!IsCasting && !IsSpellActive)
         {
-            Ray ray = currentCamera.ScreenPointToRay(Input.mousePosition);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                spellCasters = hit.transform.GetComponents<ICastSpell>();
+                SpellCasters = hit.transform.GetComponents<ICastSpell>();
             }
             else
             {
-                spellCasters = new ICastSpell[0];
+                SpellCasters = new ICastSpell[0];
             }
         }
 
 
         if (Input.GetMouseButtonUp(0))
         {
-            if (!IsCasting && !IsSpellActive && spellCasters.Length > 0)
+            if (!IsCasting && !IsSpellActive && SpellCasters.Length > 0)
             {
                 StartCasting();
             }
@@ -60,9 +59,6 @@ public class DiscreteMagicController : MonoBehaviour
                 EndSpell();
             }
         }
-        
-
-        
 
         if(IsCasting && Input.GetMouseButton(0))
         {
@@ -72,6 +68,7 @@ public class DiscreteMagicController : MonoBehaviour
 
     private void UpdateTrace()
     {
+        //check if we need to add a new node to out line definition
         var eventData = new PointerEventData(EventSystem.current);
         eventData.position = Input.mousePosition;
         var results = new List<RaycastResult>();
@@ -84,7 +81,7 @@ public class DiscreteMagicController : MonoBehaviour
             lineNodes.Add(results[0].gameObject.transform);
         }
 
-        //generate line
+        //generate line to render
         List<Vector3> linePoints = new List<Vector3>();
 
         foreach (var node in lineNodes)
@@ -109,37 +106,22 @@ public class DiscreteMagicController : MonoBehaviour
             SpellId += node.name;
         }
 
-        RaycastHit hit;
-
-        if(castPoint==null)
+        bool spellCast = false;
+        if (SpellCasters.Length >0)
         {
-            castPoint = Input.mousePosition;
-            Debug.LogWarning("Cast point was not properly set before casting.");
-        }
-
-        Ray ray = currentCamera.ScreenPointToRay(castPoint);
-
-        if (Physics.Raycast(ray, out hit))
-        {
-            Transform objectHit = hit.transform;
-
-            ICastSpell[] castReceivers = objectHit.GetComponents<ICastSpell>();
-
-            if (castReceivers.Length >0)
+            foreach(var spellCaster in SpellCasters)
             {
-                //We hit something(s) that can receive a spell
-                foreach(var castReceiver in castReceivers)
+                if (spellCaster.GetSpellId().Equals(SpellId))
                 {
-                    castReceiver.CastSpell(this);
+                    spellCaster.CastSpell(this);
+                    spellCast = true;
+                    //we can only cast one spell per pattern.
+                    break;
                 }
             }
-            else
-            {
-                //Nothing to recieve the cast! end the spell here
-                EndSpell();
-            }
         }
-        else
+
+        if (!spellCast)
         {
             //Nothing to recieve the cast! end the spell here
             EndSpell();
@@ -148,16 +130,18 @@ public class DiscreteMagicController : MonoBehaviour
 
     private void StartCasting()
     {
-
-        IsCasting = true;
-        IsSpellActive = true;
-        SpellId = "";
-        OnStartCast?.Invoke();
-        Cursor.lockState = CursorLockMode.Confined;
-        castPoint = Input.mousePosition;
-        lineNodes.Clear();
-        lineRenderer.positionCount = 0;
-        lineRenderer.enabled = true;
+        if (!IsCasting)
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+            IsCasting = true;
+            IsSpellActive = true;
+            SpellId = "";
+            OnStartCast?.Invoke();
+            castPoint = Input.mousePosition;
+            lineNodes.Clear();
+            lineRenderer.positionCount = 0;
+            lineRenderer.enabled = true;
+        }
     }
 
     private void EndCast()
