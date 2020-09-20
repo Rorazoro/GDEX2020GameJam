@@ -18,6 +18,8 @@ public class DiscreteMagicController : MonoBehaviour
     private LineRenderer lineRenderer;
     private Vector2 castPoint;
 
+    private ICastSpell[] spellCasters;
+
 
     void Start()
     {
@@ -29,23 +31,38 @@ public class DiscreteMagicController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if(!IsCasting && !IsSpellActive)
         {
-            if (!IsCasting && !IsSpellActive)
+            Ray ray = currentCamera.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                StartCasting();
-            }else if(IsCasting || IsSpellActive)
+                spellCasters = hit.transform.GetComponents<ICastSpell>();
+            }
+            else
             {
-                //This is how a spell can be cancelled, either during cast or during a spell
-                EndSpell();
+                spellCasters = new ICastSpell[0];
             }
         }
 
-        if(Input.GetMouseButtonUp(0) && IsCasting)
+
+        if (Input.GetMouseButtonUp(0))
         {
-            EndCast();
-            CastSpell();
+            if (!IsCasting && !IsSpellActive && spellCasters.Length > 0)
+            {
+                StartCasting();
+            }
+            else if(IsCasting)
+            {
+                CastSpell();
+                EndCast();
+            }else if (IsSpellActive)
+            {
+                EndSpell();
+            }
         }
+        
+
+        
 
         if(IsCasting && Input.GetMouseButton(0))
         {
@@ -149,8 +166,8 @@ public class DiscreteMagicController : MonoBehaviour
         {
             IsCasting = false;
             OnEndCast?.Invoke();
+            lineRenderer.enabled = false;
         }
-        lineRenderer.enabled = false;
     }
 
     public void EndSpell()
