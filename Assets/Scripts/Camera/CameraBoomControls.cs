@@ -5,11 +5,12 @@ using UnityEngine;
 public class CameraBoomControls : MonoBehaviour
 {
     public float CameraSpeedMetersPerSecond = 1;
+    public Texture2D CursorTexture;
 
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = true;
+        //Cursor.SetCursor(CursorTexture, new Vector2(16, 16), CursorMode.Auto);
     }
 
     void Update()
