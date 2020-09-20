@@ -223,7 +223,7 @@ Transform:
   m_GameObject: {fileID: 217475652}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.6, y: -2.45, z: -9.762}
-  m_LocalScale: {x: 34.09322, y: 1.4194319, z: 35.61258}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 550098256}
   - {fileID: 584344504}
@@ -428,7 +428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 240fb6348a53f17478bd86fdc2fce7f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CameraSpeedMetersPerSecond: 1000
+  CameraSpeedDegreesPerSecond: 1000
   CursorTexture: {fileID: 2800000, guid: 63405fee3d22fed4297fff7e68ab1b50, type: 3}
 --- !u!65 &315549916
 BoxCollider:
@@ -697,8 +697,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 550098252}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.16484216, y: 0.82427347, z: -0.04487177}
-  m_LocalScale: {x: 0.029331345, y: 0.7045072, z: 0.028079964}
+  m_LocalPosition: {x: 5.62, y: 1.1700001, z: -1.5979996}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 217475653}
   m_RootOrder: 0
@@ -794,8 +794,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 584344500}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.030211285, y: 0.82427347, z: -0.04487177}
-  m_LocalScale: {x: 0.029331345, y: 0.7045072, z: 0.028079964}
+  m_LocalPosition: {x: -1.03, y: 7.38, z: -1.5979996}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 217475653}
   m_RootOrder: 1
@@ -813,6 +813,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsLevitating: 0
+  MinY: 1
+  MaxY: 10
 --- !u!54 &584344506
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1968,7 +1970,7 @@ Transform:
   m_GameObject: {fileID: 1392659640}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 34.09322, y: 1, z: 35.61258}
   m_Children: []
   m_Father: {fileID: 217475653}
   m_RootOrder: 2
@@ -2175,19 +2177,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsCasting: 0
   IsSpellActive: 0
+  SpellId: 
   CursorTexture: {fileID: 2800000, guid: 63405fee3d22fed4297fff7e68ab1b50, type: 3}
-  Nodes:
-  - {fileID: 1143333042}
-  - {fileID: 1013133177}
-  - {fileID: 926392162}
-  - {fileID: 210263970}
-  - {fileID: 234855867}
-  - {fileID: 1008002879}
-  - {fileID: 230404694}
-  - {fileID: 590323928}
-  - {fileID: 1083941760}
-  - {fileID: 2123268230}
-  - {fileID: 955819424}
   OnStartCast:
     m_PersistentCalls:
       m_Calls:

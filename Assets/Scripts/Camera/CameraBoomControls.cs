@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraBoomControls : MonoBehaviour
 {
-    public float CameraSpeedMetersPerSecond = 1;
+    public float CameraSpeedDegreesPerSecond = 1;
     public Texture2D CursorTexture;
 
     private void Start()
@@ -15,8 +15,8 @@ public class CameraBoomControls : MonoBehaviour
 
     void Update()
     {
-        float hSpeed = Input.GetAxis("Mouse X") * Time.deltaTime * CameraSpeedMetersPerSecond;
-        float vSpeed = Input.GetAxis("Mouse Y") * Time.deltaTime * CameraSpeedMetersPerSecond;
+        float hSpeed = Input.GetAxis("Mouse X") * Time.deltaTime * CameraSpeedDegreesPerSecond;
+        float vSpeed = Input.GetAxis("Mouse Y") * Time.deltaTime * CameraSpeedDegreesPerSecond;
 
         transform.RotateAround(transform.position, Vector3.up, hSpeed);
         transform.RotateAround(transform.position, transform.right, -vSpeed);
