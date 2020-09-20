@@ -2,17 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevitatableObject : MonoBehaviour
+[RequireComponent(typeof(Rigidbody))]
+public class LevitatableObject : MonoBehaviour, IReceiveCast
 {
-    // Start is called before the first frame update
-    void Start()
+    public bool IsLevitating;
+    private Rigidbody rb;
+    private DiscreteMagicController magicController;
+
+    public void CastSpell(DiscreteMagicController magicController, string spellId)
     {
-        
+        IsLevitating = !IsLevitating;
+
+        if (IsLevitating)
+        {
+            //disable gravity and freeze the object
+            rb.useGravity = false;
+            rb.velocity = new Vector3(0, 0, 0);
+        }
+        else
+        {
+            //End the spell right away if they are de-activating the 
+            rb.useGravity = true;
+            magicController.EndSpell();
+        }
+
+ 
     }
 
-    // Update is called once per frame
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
     void Update()
     {
-        
+        if(magicController != null && magicController.IsSpellActive && IsLevitating)
+        {
+            // update y position of levitation
+        }
     }
 }
