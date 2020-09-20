@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SleepSpell : MonoBehaviour, ICastSpell
 {
-    [SerializeField] private string mySpellPattern;
+    private string mySpellPattern = "sleep";
 
     private bool isSpellActive = false;
     public void CastSpell(DiscreteMagicController magicController) //Change so it uses IReceiveCast
