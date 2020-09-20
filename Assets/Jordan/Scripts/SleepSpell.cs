@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SleepSpell : MonoBehaviour//, IReceiveCast
+public class SleepSpell : MonoBehaviour, ICastSpell
 {
     [SerializeField] private string mySpellPattern;
 
     private bool isSpellActive = false;
-    void CastSpell(string pattern) //Change so it uses IReceiveCast
+    public void CastSpell(DiscreteMagicController magicController) //Change so it uses IReceiveCast
     {
-        if (mySpellPattern == pattern)
+        if (magicController.SpellId.Equals(mySpellPattern))
         {
             isSpellActive = true;
             StartCoroutine(Sleeping());
