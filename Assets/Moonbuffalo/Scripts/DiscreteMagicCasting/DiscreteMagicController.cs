@@ -32,7 +32,8 @@ public class DiscreteMagicController : MonoBehaviour
     {
         if(!IsCasting && !IsSpellActive)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = new Ray(Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 5)), Camera.main.transform.forward);
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
                 SpellCasters = hit.transform.GetComponents<ICastSpell>();
@@ -77,7 +78,6 @@ public class DiscreteMagicController : MonoBehaviour
             results[0].gameObject.CompareTag("MagicNode") &&
            (lineNodes.Count == 0 || results[0].gameObject.transform != lineNodes[lineNodes.Count - 1]))
         {
-            Debug.Log("Add Node: " + results[0].gameObject.name);
             lineNodes.Add(results[0].gameObject.transform);
         }
 

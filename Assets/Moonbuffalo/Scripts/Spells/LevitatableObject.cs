@@ -55,6 +55,14 @@ public class LevitatableObject : MonoBehaviour, ICastSpell
     {
         this.magicController.OnEndSpell.RemoveListener(OnEndSpell);
         magicController = null;
+
+        //if it's kinematic, we want to turn off levitating. 
+        //This makes kinematic add the option for puzzles that just need to set the position of something 
+        //but dont want it to alternate between gravity enabled physics and kinematic
+        if (rb.isKinematic)
+        {
+            IsLevitating = false;
+        }
     }
 
     void Start()
