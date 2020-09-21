@@ -77,7 +77,6 @@ public class DiscreteMagicController : MonoBehaviour
             results[0].gameObject.CompareTag("MagicNode") &&
            (lineNodes.Count == 0 || results[0].gameObject.transform != lineNodes[lineNodes.Count - 1]))
         {
-            Debug.Log("Add Node: " + results[0].gameObject.name);
             lineNodes.Add(results[0].gameObject.transform);
         }
 
