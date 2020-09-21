@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - MagicNode
+  - Step
   layers:
   - Default
   - TransparentFX
