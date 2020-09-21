@@ -32,7 +32,8 @@ public class DiscreteMagicController : MonoBehaviour
     {
         if(!IsCasting && !IsSpellActive)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = new Ray(Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 5)), Camera.main.transform.forward);
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
                 SpellCasters = hit.transform.GetComponents<ICastSpell>();
