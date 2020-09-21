@@ -1150,8 +1150,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsLevitating: 0
-  MinY: -15
-  MaxY: -1
+  MinY: -3.2
+  MaxY: 0
   LevitateRateMetersPerSecond: 100
 --- !u!54 &287634694
 Rigidbody:
@@ -2491,8 +2491,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsLevitating: 0
-  MinY: -15
-  MaxY: -1
+  MinY: -14.4
+  MaxY: 0
   LevitateRateMetersPerSecond: 100
 --- !u!54 &584344506
 Rigidbody:
@@ -2598,7 +2598,7 @@ GameObject:
   - component: {fileID: 619404686}
   - component: {fileID: 619404685}
   m_Layer: 0
-  m_Name: Wall (1)
+  m_Name: ShadowTargetBeam
   m_TagString: MagicNode
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2650,7 +2650,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 507466f2e4d618d4a90f4b7ba5e11db4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2828,8 +2828,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsLevitating: 0
-  MinY: -15
-  MaxY: -1
+  MinY: -3.2
+  MaxY: 0
   LevitateRateMetersPerSecond: 100
 --- !u!54 &664287910
 Rigidbody:
@@ -3799,8 +3799,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsLevitating: 0
-  MinY: -15
-  MaxY: -1
+  MinY: -14
+  MaxY: 0
   LevitateRateMetersPerSecond: 100
 --- !u!54 &920580573
 Rigidbody:
@@ -5650,7 +5650,6 @@ GameObject:
   - component: {fileID: 1178651578}
   - component: {fileID: 1178651577}
   - component: {fileID: 1178651580}
-  - component: {fileID: 1178651581}
   m_Layer: 0
   m_Name: DoorPuzzle
   m_TagString: MagicNode
@@ -5741,32 +5740,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1178651575}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3514c8f18f55d6a4b990f4de477b973f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Levitator: {fileID: 584344505}
-  DoorHeight: {x: 0, y: 10, z: 0}
-  StartPosition: {x: 0, y: 0, z: 0}
-  InvertPercent: 1
---- !u!114 &1178651581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1178651575}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b90570211c3ecdd46be217c271ae99ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c7423d659f472347b96c0cb7520dba5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Levitators:
   - {fileID: 584344505}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1349820390}
+  - {fileID: 664287909}
+  - {fileID: 920580572}
+  - {fileID: 287634693}
+  - {fileID: 1573877352}
   DoorHeight: {x: 0, y: -9, z: 0}
   StartPosition: {x: 0, y: 0, z: 0}
   InvertPercent: 0
@@ -6616,8 +6601,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsLevitating: 0
-  MinY: -15
-  MaxY: -1
+  MinY: -7
+  MaxY: 0
   LevitateRateMetersPerSecond: 100
 --- !u!54 &1349820391
 Rigidbody:
@@ -7413,8 +7398,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsLevitating: 0
-  MinY: -15
-  MaxY: -1
+  MinY: -10.8
+  MaxY: 0
   LevitateRateMetersPerSecond: 100
 --- !u!54 &1573877353
 Rigidbody:
