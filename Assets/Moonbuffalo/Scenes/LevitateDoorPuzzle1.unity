@@ -3407,7 +3407,7 @@ MonoBehaviour:
   Levitator: {fileID: 584344505}
   DoorHeight: {x: 0, y: 10, z: 0}
   StartPosition: {x: 0, y: 0, z: 0}
-  InvertPercent: 1
+  InvertPercent: 0
 --- !u!1 &1185882341 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2ea94e3c09a04ea4caf85191124852cc, type: 3}
