@@ -8543,8 +8543,9 @@ GameObject:
   - component: {fileID: 1178651578}
   - component: {fileID: 1178651577}
   - component: {fileID: 1178651580}
+  - component: {fileID: 1178651581}
   m_Layer: 0
-  m_Name: Door
+  m_Name: DoorPuzzle
   m_TagString: MagicNode
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8558,8 +8559,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1178651575}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.143, y: 4.322, z: -2.37}
-  m_LocalScale: {x: 10.657077, y: 9.144793, z: 0.7356879}
+  m_LocalPosition: {x: 0.143, y: 3.887, z: -2.37}
+  m_LocalScale: {x: 10.657077, y: 9.870352, z: 0.7356879}
   m_Children: []
   m_Father: {fileID: 217475653}
   m_RootOrder: 6
@@ -8633,7 +8634,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1178651575}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3514c8f18f55d6a4b990f4de477b973f, type: 3}
   m_Name: 
@@ -8642,6 +8643,26 @@ MonoBehaviour:
   DoorHeight: {x: 0, y: 10, z: 0}
   StartPosition: {x: 0, y: 0, z: 0}
   InvertPercent: 1
+--- !u!114 &1178651581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178651575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b90570211c3ecdd46be217c271ae99ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Levitators:
+  - {fileID: 584344505}
+  - {fileID: 269612162}
+  - {fileID: 1815090995}
+  - {fileID: 168633511}
+  DoorHeight: {x: 0, y: -9, z: 0}
+  StartPosition: {x: 0, y: 0, z: 0}
+  InvertPercent: 0
 --- !u!1 &1185882341 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2ea94e3c09a04ea4caf85191124852cc, type: 3}
@@ -14320,7 +14341,7 @@ GameObject:
   - component: {fileID: 2030372915}
   - component: {fileID: 2030372914}
   m_Layer: 0
-  m_Name: Directional Light (1)
+  m_Name: Directional Light No shadows
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
