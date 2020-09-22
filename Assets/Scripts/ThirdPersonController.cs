@@ -12,9 +12,10 @@ public class ThirdPersonController : MonoBehaviour {
 
     public GameObject followTransform;
     [Range (0f, 10f)] public float MoveSpeed = 6f;
-    [Range (0f, 1f)] public float LookSpeed = 0.5f;
+    [Range (0f, 10f)] public float LookSpeed = 5f;
     [Range (0f, 10f)] public float Gravity = 5f;
     [Range (0f, 10f)] public float PushPower = 5f;
+    public bool InvertY = false;
 
     public void OnMove (InputAction.CallbackContext context) {
         _moveInput = context.ReadValue<Vector2> ();
@@ -33,12 +34,16 @@ public class ThirdPersonController : MonoBehaviour {
     }
 
     private void Move () {
+
+        float lookSpeed = LookSpeed / 100;
+
         //Move the player based on the X input
-        transform.rotation *= Quaternion.AngleAxis (_lookInput.x * LookSpeed, Vector3.up);
+        transform.rotation *= Quaternion.AngleAxis (_lookInput.x * lookSpeed, Vector3.up);
 
         //Rotate the Follow Target transform based on the input
-        followTransform.transform.rotation *= Quaternion.AngleAxis (_lookInput.x * LookSpeed, Vector3.up);
-        followTransform.transform.rotation *= Quaternion.AngleAxis (_lookInput.y * LookSpeed, Vector3.right);
+        float lookInputY = InvertY ? -_lookInput.y : _lookInput.y;
+        followTransform.transform.rotation *= Quaternion.AngleAxis (_lookInput.x * lookSpeed, Vector3.up);
+        followTransform.transform.rotation *= Quaternion.AngleAxis (lookInputY * lookSpeed, Vector3.right);
 
         Vector3 angles = followTransform.transform.localEulerAngles;
         angles.z = 0;
@@ -54,7 +59,7 @@ public class ThirdPersonController : MonoBehaviour {
 
         followTransform.transform.localEulerAngles = angles;
 
-        nextRotation = Quaternion.Lerp (followTransform.transform.rotation, nextRotation, Time.deltaTime * LookSpeed);
+        nextRotation = Quaternion.Lerp (followTransform.transform.rotation, nextRotation, Time.deltaTime * lookSpeed);
 
         if (_moveInput.x == 0 && _moveInput.y == 0) {
             nextPosition = transform.position;

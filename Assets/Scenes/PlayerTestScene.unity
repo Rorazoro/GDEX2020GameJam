@@ -10045,9 +10045,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followTransform: {fileID: 1440369949}
   MoveSpeed: 6
-  LookSpeed: 0.5
+  LookSpeed: 5
   Gravity: 5
   PushPower: 5
+  InvertY: 0
 --- !u!1 &1164247898
 GameObject:
   m_ObjectHideFlags: 0
@@ -12014,6 +12015,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showConsole: 0
+  showHelp: 0
+  playerInput: {fileID: 1772594589}
+  player: {fileID: 1095422790}
 --- !u!114 &1772594589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12076,11 +12080,35 @@ MonoBehaviour:
     m_ActionId: b759ce15-fa96-40db-badf-b5cbae1af097
     m_ActionName: Player/Fire[/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1772594588}
+        m_TargetAssemblyTypeName: DebugManager, Assembly-CSharp
+        m_MethodName: OnToggleConsole
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: d0ebd608-2957-4a13-956a-d3a60655a157
     m_ActionName: Player/Toggle Console[/Keyboard/backquote]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1772594588}
+        m_TargetAssemblyTypeName: DebugManager, Assembly-CSharp
+        m_MethodName: OnReturn
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 2e5cb0b8-15db-4722-96bd-4ff09194380a
     m_ActionName: Player/Return[/Keyboard/enter]
   - m_PersistentCalls:
