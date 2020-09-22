@@ -6,9 +6,7 @@ public class ThirdPersonController : MonoBehaviour {
     private CharacterController _controller;
     private Vector2 _moveInput = new Vector2 ();
     private Vector2 _lookInput = new Vector2 ();
-    private Quaternion nextRotation;
-    private Vector3 nextPosition;
-    private float verticalSpeed;
+    private float verticalMovement;
 
     public GameObject followTransform;
     [Range (0f, 10f)] public float MoveSpeed = 6f;
@@ -59,32 +57,24 @@ public class ThirdPersonController : MonoBehaviour {
 
         followTransform.transform.localEulerAngles = angles;
 
-        nextRotation = Quaternion.Lerp (followTransform.transform.rotation, nextRotation, Time.deltaTime * lookSpeed);
-
         if (_moveInput.x == 0 && _moveInput.y == 0) {
-            nextPosition = transform.position;
-
-            // transform.rotation = Quaternion.Euler (0, followTransform.transform.rotation.eulerAngles.y, 0);
-            // followTransform.transform.localEulerAngles = new Vector3 (angles.x, 0, 0);
-
             return;
         }
 
         Vector3 position = (transform.forward * _moveInput.y * MoveSpeed) + (transform.right * _moveInput.x * MoveSpeed);
-        nextPosition = transform.position + position;
 
         //Set the player rotation based on the look transform
         transform.rotation = Quaternion.Euler (0, followTransform.transform.rotation.eulerAngles.y, 0);
         //reset the y rotation of the look transform
         followTransform.transform.localEulerAngles = new Vector3 (angles.x, 0, 0);
 
-        //Calculate vertical speed and gravity
+        //Calculate vertical movement and gravity
         if (_controller.isGrounded) {
-            verticalSpeed = 0;
+            verticalMovement = 0;
         }
 
-        verticalSpeed -= Gravity;
-        position.y = verticalSpeed;
+        verticalMovement -= Gravity;
+        position.y = verticalMovement;
 
         //Check for steps
 
