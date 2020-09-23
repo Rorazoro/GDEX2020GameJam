@@ -35,14 +35,6 @@ public class @InputControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Fire"",
-                    ""type"": ""Button"",
-                    ""id"": ""b759ce15-fa96-40db-badf-b5cbae1af097"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
                     ""name"": ""Toggle Console"",
                     ""type"": ""Button"",
                     ""id"": ""d0ebd608-2957-4a13-956a-d3a60655a157"",
@@ -54,6 +46,22 @@ public class @InputControls : IInputActionCollection, IDisposable
                     ""name"": ""Return"",
                     ""type"": ""Button"",
                     ""id"": ""2e5cb0b8-15db-4722-96bd-4ff09194380a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""da79a10c-233f-4527-95b9-727eddc4611c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Cast"",
+                    ""type"": ""Button"",
+                    ""id"": ""52b871cb-280e-48fa-a1b2-94854b3ae5fd"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -227,61 +235,6 @@ public class @InputControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""143bb1cd-cc10-4eca-a2f0-a3664166fe91"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Gamepad"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""05f6913d-c316-48b2-a6bb-e225f14c7960"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""886e731e-7071-4ae4-95c0-e61739dad6fd"",
-                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Touch"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""ee3d0cd2-254e-47a7-a8cb-bc94d9658c54"",
-                    ""path"": ""<Joystick>/trigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Joystick"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8255d333-5683-4943-a58a-ccb207ff1dce"",
-                    ""path"": ""<XRController>/{PrimaryAction}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""XR"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""0a80390e-d61b-404b-9784-f5ee3b92dae8"",
                     ""path"": ""<Keyboard>/backquote"",
                     ""interactions"": """",
@@ -299,6 +252,28 @@ public class @InputControls : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Return"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f4a5ed03-63b2-4b84-bfe5-8dc713d63546"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dd5f23b3-3d40-4b24-8a2b-d83b318ec7e2"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Cast"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -809,6 +784,71 @@ public class @InputControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""SpellCasting"",
+            ""id"": ""78424ce1-8e3c-4223-a9ab-1760278436e8"",
+            ""actions"": [
+                {
+                    ""name"": ""Draw"",
+                    ""type"": ""Button"",
+                    ""id"": ""02523485-605f-43a9-8881-70d5c00779c9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""EndCasting"",
+                    ""type"": ""Button"",
+                    ""id"": ""62114a30-ccfb-40ff-a1c4-b3f79e00ac07"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Point"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""c8fccf76-101b-4201-88a4-832abf5d5f3d"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""f626b105-d087-4872-b440-90ed62346f61"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Draw"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dd346cca-1103-468c-8230-4975a40bb8a8"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""EndCasting"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""22da790d-cec7-4c3d-8937-b8c49b8fe0dd"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Point"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -878,9 +918,10 @@ public class @InputControls : IInputActionCollection, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
-        m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
         m_Player_ToggleConsole = m_Player.FindAction("Toggle Console", throwIfNotFound: true);
         m_Player_Return = m_Player.FindAction("Return", throwIfNotFound: true);
+        m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
+        m_Player_Cast = m_Player.FindAction("Cast", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -893,6 +934,11 @@ public class @InputControls : IInputActionCollection, IDisposable
         m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
+        // SpellCasting
+        m_SpellCasting = asset.FindActionMap("SpellCasting", throwIfNotFound: true);
+        m_SpellCasting_Draw = m_SpellCasting.FindAction("Draw", throwIfNotFound: true);
+        m_SpellCasting_EndCasting = m_SpellCasting.FindAction("EndCasting", throwIfNotFound: true);
+        m_SpellCasting_Point = m_SpellCasting.FindAction("Point", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -944,18 +990,20 @@ public class @InputControls : IInputActionCollection, IDisposable
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Look;
-    private readonly InputAction m_Player_Fire;
     private readonly InputAction m_Player_ToggleConsole;
     private readonly InputAction m_Player_Return;
+    private readonly InputAction m_Player_Interact;
+    private readonly InputAction m_Player_Cast;
     public struct PlayerActions
     {
         private @InputControls m_Wrapper;
         public PlayerActions(@InputControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Look => m_Wrapper.m_Player_Look;
-        public InputAction @Fire => m_Wrapper.m_Player_Fire;
         public InputAction @ToggleConsole => m_Wrapper.m_Player_ToggleConsole;
         public InputAction @Return => m_Wrapper.m_Player_Return;
+        public InputAction @Interact => m_Wrapper.m_Player_Interact;
+        public InputAction @Cast => m_Wrapper.m_Player_Cast;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -971,15 +1019,18 @@ public class @InputControls : IInputActionCollection, IDisposable
                 @Look.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
                 @Look.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
                 @Look.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
-                @Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
-                @Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
-                @Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                 @ToggleConsole.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleConsole;
                 @ToggleConsole.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleConsole;
                 @ToggleConsole.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleConsole;
                 @Return.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReturn;
                 @Return.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReturn;
                 @Return.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReturn;
+                @Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
+                @Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
+                @Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
+                @Cast.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCast;
+                @Cast.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCast;
+                @Cast.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCast;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -990,15 +1041,18 @@ public class @InputControls : IInputActionCollection, IDisposable
                 @Look.started += instance.OnLook;
                 @Look.performed += instance.OnLook;
                 @Look.canceled += instance.OnLook;
-                @Fire.started += instance.OnFire;
-                @Fire.performed += instance.OnFire;
-                @Fire.canceled += instance.OnFire;
                 @ToggleConsole.started += instance.OnToggleConsole;
                 @ToggleConsole.performed += instance.OnToggleConsole;
                 @ToggleConsole.canceled += instance.OnToggleConsole;
                 @Return.started += instance.OnReturn;
                 @Return.performed += instance.OnReturn;
                 @Return.canceled += instance.OnReturn;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
+                @Cast.started += instance.OnCast;
+                @Cast.performed += instance.OnCast;
+                @Cast.canceled += instance.OnCast;
             }
         }
     }
@@ -1108,6 +1162,55 @@ public class @InputControls : IInputActionCollection, IDisposable
         }
     }
     public UIActions @UI => new UIActions(this);
+
+    // SpellCasting
+    private readonly InputActionMap m_SpellCasting;
+    private ISpellCastingActions m_SpellCastingActionsCallbackInterface;
+    private readonly InputAction m_SpellCasting_Draw;
+    private readonly InputAction m_SpellCasting_EndCasting;
+    private readonly InputAction m_SpellCasting_Point;
+    public struct SpellCastingActions
+    {
+        private @InputControls m_Wrapper;
+        public SpellCastingActions(@InputControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Draw => m_Wrapper.m_SpellCasting_Draw;
+        public InputAction @EndCasting => m_Wrapper.m_SpellCasting_EndCasting;
+        public InputAction @Point => m_Wrapper.m_SpellCasting_Point;
+        public InputActionMap Get() { return m_Wrapper.m_SpellCasting; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(SpellCastingActions set) { return set.Get(); }
+        public void SetCallbacks(ISpellCastingActions instance)
+        {
+            if (m_Wrapper.m_SpellCastingActionsCallbackInterface != null)
+            {
+                @Draw.started -= m_Wrapper.m_SpellCastingActionsCallbackInterface.OnDraw;
+                @Draw.performed -= m_Wrapper.m_SpellCastingActionsCallbackInterface.OnDraw;
+                @Draw.canceled -= m_Wrapper.m_SpellCastingActionsCallbackInterface.OnDraw;
+                @EndCasting.started -= m_Wrapper.m_SpellCastingActionsCallbackInterface.OnEndCasting;
+                @EndCasting.performed -= m_Wrapper.m_SpellCastingActionsCallbackInterface.OnEndCasting;
+                @EndCasting.canceled -= m_Wrapper.m_SpellCastingActionsCallbackInterface.OnEndCasting;
+                @Point.started -= m_Wrapper.m_SpellCastingActionsCallbackInterface.OnPoint;
+                @Point.performed -= m_Wrapper.m_SpellCastingActionsCallbackInterface.OnPoint;
+                @Point.canceled -= m_Wrapper.m_SpellCastingActionsCallbackInterface.OnPoint;
+            }
+            m_Wrapper.m_SpellCastingActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Draw.started += instance.OnDraw;
+                @Draw.performed += instance.OnDraw;
+                @Draw.canceled += instance.OnDraw;
+                @EndCasting.started += instance.OnEndCasting;
+                @EndCasting.performed += instance.OnEndCasting;
+                @EndCasting.canceled += instance.OnEndCasting;
+                @Point.started += instance.OnPoint;
+                @Point.performed += instance.OnPoint;
+                @Point.canceled += instance.OnPoint;
+            }
+        }
+    }
+    public SpellCastingActions @SpellCasting => new SpellCastingActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -1157,9 +1260,10 @@ public class @InputControls : IInputActionCollection, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
-        void OnFire(InputAction.CallbackContext context);
         void OnToggleConsole(InputAction.CallbackContext context);
         void OnReturn(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
+        void OnCast(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
@@ -1173,5 +1277,11 @@ public class @InputControls : IInputActionCollection, IDisposable
         void OnRightClick(InputAction.CallbackContext context);
         void OnTrackedDevicePosition(InputAction.CallbackContext context);
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
+    }
+    public interface ISpellCastingActions
+    {
+        void OnDraw(InputAction.CallbackContext context);
+        void OnEndCasting(InputAction.CallbackContext context);
+        void OnPoint(InputAction.CallbackContext context);
     }
 }

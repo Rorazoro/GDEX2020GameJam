@@ -67,7 +67,7 @@ public class DebugManager : SingletonBehaviour<DebugManager> {
         };
     }
 
-    public void OnToggleConsole (InputAction.CallbackContext context) {
+    public void ToggleConsole () {
         showConsole = !showConsole;
         if (showConsole) {
             playerInput.actions.FindAction ("Move").Disable ();
@@ -79,7 +79,7 @@ public class DebugManager : SingletonBehaviour<DebugManager> {
 
         ClearConsoleInput ();
     }
-    public void OnReturn (InputAction.CallbackContext context) {
+    public void ReturnInput () {
         if (showConsole) {
             HandleConsoleInput ();
             ClearConsoleInput ();
