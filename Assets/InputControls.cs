@@ -43,14 +43,6 @@ public class @InputControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Return"",
-                    ""type"": ""Button"",
-                    ""id"": ""2e5cb0b8-15db-4722-96bd-4ff09194380a"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
                     ""name"": ""Interact"",
                     ""type"": ""Button"",
                     ""id"": ""da79a10c-233f-4527-95b9-727eddc4611c"",
@@ -246,17 +238,6 @@ public class @InputControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""53ea31e8-4a4b-4c9a-88af-01014604bc60"",
-                    ""path"": ""<Keyboard>/enter"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Return"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""f4a5ed03-63b2-4b84-bfe5-8dc713d63546"",
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
@@ -288,6 +269,14 @@ public class @InputControls : IInputActionCollection, IDisposable
                     ""type"": ""Value"",
                     ""id"": ""622d76ca-86f2-4f1e-abcb-e465f9986413"",
                     ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Toggle Console"",
+                    ""type"": ""Button"",
+                    ""id"": ""d9b68e77-0258-47bc-9c39-46450d40daf2"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
@@ -782,6 +771,17 @@ public class @InputControls : IInputActionCollection, IDisposable
                     ""action"": ""TrackedDeviceOrientation"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""97c9f512-75d6-4f98-bd6d-c262c37e8998"",
+                    ""path"": ""<Keyboard>/backquote"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Toggle Console"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -810,6 +810,14 @@ public class @InputControls : IInputActionCollection, IDisposable
                     ""type"": ""PassThrough"",
                     ""id"": ""c8fccf76-101b-4201-88a4-832abf5d5f3d"",
                     ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Toggle Console"",
+                    ""type"": ""Button"",
+                    ""id"": ""df01e262-1c33-484e-8ae1-4756a03af9f6"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 }
@@ -845,6 +853,101 @@ public class @InputControls : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Point"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""434c23f5-5543-4e86-99e6-a813d03501e5"",
+                    ""path"": ""<Keyboard>/backquote"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Toggle Console"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Debug"",
+            ""id"": ""3e5cb7ff-51bd-49af-ae16-feb510225499"",
+            ""actions"": [
+                {
+                    ""name"": ""Return"",
+                    ""type"": ""Button"",
+                    ""id"": ""411588cd-95a6-4225-affa-f403ea6a415b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Toggle Console"",
+                    ""type"": ""Button"",
+                    ""id"": ""a252ce88-a175-4d06-901d-b755eaf36759"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""PreviousCommand"",
+                    ""type"": ""Button"",
+                    ""id"": ""242a727d-2de6-4229-9e10-7e9788a3d5d3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""NextCommand"",
+                    ""type"": ""Button"",
+                    ""id"": ""5868662d-c7ad-46e8-a672-100c81d7d8da"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""e5422fc2-3869-4caf-acc8-ea78110848a4"",
+                    ""path"": ""<Keyboard>/backquote"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Toggle Console"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1f7cfaf0-245a-499f-9188-126594894555"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Return"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b9872525-3a6d-473a-a713-ad6594cae5c5"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""PreviousCommand"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""65cf4da8-d643-44fb-ae09-63d19e200845"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""NextCommand"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -919,12 +1022,12 @@ public class @InputControls : IInputActionCollection, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_ToggleConsole = m_Player.FindAction("Toggle Console", throwIfNotFound: true);
-        m_Player_Return = m_Player.FindAction("Return", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Cast = m_Player.FindAction("Cast", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
+        m_UI_ToggleConsole = m_UI.FindAction("Toggle Console", throwIfNotFound: true);
         m_UI_Submit = m_UI.FindAction("Submit", throwIfNotFound: true);
         m_UI_Cancel = m_UI.FindAction("Cancel", throwIfNotFound: true);
         m_UI_Point = m_UI.FindAction("Point", throwIfNotFound: true);
@@ -939,6 +1042,13 @@ public class @InputControls : IInputActionCollection, IDisposable
         m_SpellCasting_Draw = m_SpellCasting.FindAction("Draw", throwIfNotFound: true);
         m_SpellCasting_EndCasting = m_SpellCasting.FindAction("EndCasting", throwIfNotFound: true);
         m_SpellCasting_Point = m_SpellCasting.FindAction("Point", throwIfNotFound: true);
+        m_SpellCasting_ToggleConsole = m_SpellCasting.FindAction("Toggle Console", throwIfNotFound: true);
+        // Debug
+        m_Debug = asset.FindActionMap("Debug", throwIfNotFound: true);
+        m_Debug_Return = m_Debug.FindAction("Return", throwIfNotFound: true);
+        m_Debug_ToggleConsole = m_Debug.FindAction("Toggle Console", throwIfNotFound: true);
+        m_Debug_PreviousCommand = m_Debug.FindAction("PreviousCommand", throwIfNotFound: true);
+        m_Debug_NextCommand = m_Debug.FindAction("NextCommand", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -991,7 +1101,6 @@ public class @InputControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_ToggleConsole;
-    private readonly InputAction m_Player_Return;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_Cast;
     public struct PlayerActions
@@ -1001,7 +1110,6 @@ public class @InputControls : IInputActionCollection, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @ToggleConsole => m_Wrapper.m_Player_ToggleConsole;
-        public InputAction @Return => m_Wrapper.m_Player_Return;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @Cast => m_Wrapper.m_Player_Cast;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
@@ -1022,9 +1130,6 @@ public class @InputControls : IInputActionCollection, IDisposable
                 @ToggleConsole.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleConsole;
                 @ToggleConsole.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleConsole;
                 @ToggleConsole.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleConsole;
-                @Return.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReturn;
-                @Return.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReturn;
-                @Return.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReturn;
                 @Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
@@ -1044,9 +1149,6 @@ public class @InputControls : IInputActionCollection, IDisposable
                 @ToggleConsole.started += instance.OnToggleConsole;
                 @ToggleConsole.performed += instance.OnToggleConsole;
                 @ToggleConsole.canceled += instance.OnToggleConsole;
-                @Return.started += instance.OnReturn;
-                @Return.performed += instance.OnReturn;
-                @Return.canceled += instance.OnReturn;
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
@@ -1062,6 +1164,7 @@ public class @InputControls : IInputActionCollection, IDisposable
     private readonly InputActionMap m_UI;
     private IUIActions m_UIActionsCallbackInterface;
     private readonly InputAction m_UI_Navigate;
+    private readonly InputAction m_UI_ToggleConsole;
     private readonly InputAction m_UI_Submit;
     private readonly InputAction m_UI_Cancel;
     private readonly InputAction m_UI_Point;
@@ -1076,6 +1179,7 @@ public class @InputControls : IInputActionCollection, IDisposable
         private @InputControls m_Wrapper;
         public UIActions(@InputControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Navigate => m_Wrapper.m_UI_Navigate;
+        public InputAction @ToggleConsole => m_Wrapper.m_UI_ToggleConsole;
         public InputAction @Submit => m_Wrapper.m_UI_Submit;
         public InputAction @Cancel => m_Wrapper.m_UI_Cancel;
         public InputAction @Point => m_Wrapper.m_UI_Point;
@@ -1097,6 +1201,9 @@ public class @InputControls : IInputActionCollection, IDisposable
                 @Navigate.started -= m_Wrapper.m_UIActionsCallbackInterface.OnNavigate;
                 @Navigate.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnNavigate;
                 @Navigate.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnNavigate;
+                @ToggleConsole.started -= m_Wrapper.m_UIActionsCallbackInterface.OnToggleConsole;
+                @ToggleConsole.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnToggleConsole;
+                @ToggleConsole.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnToggleConsole;
                 @Submit.started -= m_Wrapper.m_UIActionsCallbackInterface.OnSubmit;
                 @Submit.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnSubmit;
                 @Submit.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnSubmit;
@@ -1131,6 +1238,9 @@ public class @InputControls : IInputActionCollection, IDisposable
                 @Navigate.started += instance.OnNavigate;
                 @Navigate.performed += instance.OnNavigate;
                 @Navigate.canceled += instance.OnNavigate;
+                @ToggleConsole.started += instance.OnToggleConsole;
+                @ToggleConsole.performed += instance.OnToggleConsole;
+                @ToggleConsole.canceled += instance.OnToggleConsole;
                 @Submit.started += instance.OnSubmit;
                 @Submit.performed += instance.OnSubmit;
                 @Submit.canceled += instance.OnSubmit;
@@ -1169,6 +1279,7 @@ public class @InputControls : IInputActionCollection, IDisposable
     private readonly InputAction m_SpellCasting_Draw;
     private readonly InputAction m_SpellCasting_EndCasting;
     private readonly InputAction m_SpellCasting_Point;
+    private readonly InputAction m_SpellCasting_ToggleConsole;
     public struct SpellCastingActions
     {
         private @InputControls m_Wrapper;
@@ -1176,6 +1287,7 @@ public class @InputControls : IInputActionCollection, IDisposable
         public InputAction @Draw => m_Wrapper.m_SpellCasting_Draw;
         public InputAction @EndCasting => m_Wrapper.m_SpellCasting_EndCasting;
         public InputAction @Point => m_Wrapper.m_SpellCasting_Point;
+        public InputAction @ToggleConsole => m_Wrapper.m_SpellCasting_ToggleConsole;
         public InputActionMap Get() { return m_Wrapper.m_SpellCasting; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1194,6 +1306,9 @@ public class @InputControls : IInputActionCollection, IDisposable
                 @Point.started -= m_Wrapper.m_SpellCastingActionsCallbackInterface.OnPoint;
                 @Point.performed -= m_Wrapper.m_SpellCastingActionsCallbackInterface.OnPoint;
                 @Point.canceled -= m_Wrapper.m_SpellCastingActionsCallbackInterface.OnPoint;
+                @ToggleConsole.started -= m_Wrapper.m_SpellCastingActionsCallbackInterface.OnToggleConsole;
+                @ToggleConsole.performed -= m_Wrapper.m_SpellCastingActionsCallbackInterface.OnToggleConsole;
+                @ToggleConsole.canceled -= m_Wrapper.m_SpellCastingActionsCallbackInterface.OnToggleConsole;
             }
             m_Wrapper.m_SpellCastingActionsCallbackInterface = instance;
             if (instance != null)
@@ -1207,10 +1322,70 @@ public class @InputControls : IInputActionCollection, IDisposable
                 @Point.started += instance.OnPoint;
                 @Point.performed += instance.OnPoint;
                 @Point.canceled += instance.OnPoint;
+                @ToggleConsole.started += instance.OnToggleConsole;
+                @ToggleConsole.performed += instance.OnToggleConsole;
+                @ToggleConsole.canceled += instance.OnToggleConsole;
             }
         }
     }
     public SpellCastingActions @SpellCasting => new SpellCastingActions(this);
+
+    // Debug
+    private readonly InputActionMap m_Debug;
+    private IDebugActions m_DebugActionsCallbackInterface;
+    private readonly InputAction m_Debug_Return;
+    private readonly InputAction m_Debug_ToggleConsole;
+    private readonly InputAction m_Debug_PreviousCommand;
+    private readonly InputAction m_Debug_NextCommand;
+    public struct DebugActions
+    {
+        private @InputControls m_Wrapper;
+        public DebugActions(@InputControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Return => m_Wrapper.m_Debug_Return;
+        public InputAction @ToggleConsole => m_Wrapper.m_Debug_ToggleConsole;
+        public InputAction @PreviousCommand => m_Wrapper.m_Debug_PreviousCommand;
+        public InputAction @NextCommand => m_Wrapper.m_Debug_NextCommand;
+        public InputActionMap Get() { return m_Wrapper.m_Debug; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(DebugActions set) { return set.Get(); }
+        public void SetCallbacks(IDebugActions instance)
+        {
+            if (m_Wrapper.m_DebugActionsCallbackInterface != null)
+            {
+                @Return.started -= m_Wrapper.m_DebugActionsCallbackInterface.OnReturn;
+                @Return.performed -= m_Wrapper.m_DebugActionsCallbackInterface.OnReturn;
+                @Return.canceled -= m_Wrapper.m_DebugActionsCallbackInterface.OnReturn;
+                @ToggleConsole.started -= m_Wrapper.m_DebugActionsCallbackInterface.OnToggleConsole;
+                @ToggleConsole.performed -= m_Wrapper.m_DebugActionsCallbackInterface.OnToggleConsole;
+                @ToggleConsole.canceled -= m_Wrapper.m_DebugActionsCallbackInterface.OnToggleConsole;
+                @PreviousCommand.started -= m_Wrapper.m_DebugActionsCallbackInterface.OnPreviousCommand;
+                @PreviousCommand.performed -= m_Wrapper.m_DebugActionsCallbackInterface.OnPreviousCommand;
+                @PreviousCommand.canceled -= m_Wrapper.m_DebugActionsCallbackInterface.OnPreviousCommand;
+                @NextCommand.started -= m_Wrapper.m_DebugActionsCallbackInterface.OnNextCommand;
+                @NextCommand.performed -= m_Wrapper.m_DebugActionsCallbackInterface.OnNextCommand;
+                @NextCommand.canceled -= m_Wrapper.m_DebugActionsCallbackInterface.OnNextCommand;
+            }
+            m_Wrapper.m_DebugActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Return.started += instance.OnReturn;
+                @Return.performed += instance.OnReturn;
+                @Return.canceled += instance.OnReturn;
+                @ToggleConsole.started += instance.OnToggleConsole;
+                @ToggleConsole.performed += instance.OnToggleConsole;
+                @ToggleConsole.canceled += instance.OnToggleConsole;
+                @PreviousCommand.started += instance.OnPreviousCommand;
+                @PreviousCommand.performed += instance.OnPreviousCommand;
+                @PreviousCommand.canceled += instance.OnPreviousCommand;
+                @NextCommand.started += instance.OnNextCommand;
+                @NextCommand.performed += instance.OnNextCommand;
+                @NextCommand.canceled += instance.OnNextCommand;
+            }
+        }
+    }
+    public DebugActions @Debug => new DebugActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -1261,13 +1436,13 @@ public class @InputControls : IInputActionCollection, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnToggleConsole(InputAction.CallbackContext context);
-        void OnReturn(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnCast(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
         void OnNavigate(InputAction.CallbackContext context);
+        void OnToggleConsole(InputAction.CallbackContext context);
         void OnSubmit(InputAction.CallbackContext context);
         void OnCancel(InputAction.CallbackContext context);
         void OnPoint(InputAction.CallbackContext context);
@@ -1283,5 +1458,13 @@ public class @InputControls : IInputActionCollection, IDisposable
         void OnDraw(InputAction.CallbackContext context);
         void OnEndCasting(InputAction.CallbackContext context);
         void OnPoint(InputAction.CallbackContext context);
+        void OnToggleConsole(InputAction.CallbackContext context);
+    }
+    public interface IDebugActions
+    {
+        void OnReturn(InputAction.CallbackContext context);
+        void OnToggleConsole(InputAction.CallbackContext context);
+        void OnPreviousCommand(InputAction.CallbackContext context);
+        void OnNextCommand(InputAction.CallbackContext context);
     }
 }

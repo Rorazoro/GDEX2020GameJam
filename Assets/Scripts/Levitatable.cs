@@ -1,25 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 [RequireComponent (typeof (Rigidbody))]
 public class Levitatable : MonoBehaviour, ICastable {
-    static string SpellId = "159AB";
+    public string SpellId = "159AB";
+    public CinemachineVirtualCamera cam;
 
     public bool IsLevitating;
     public float MinY, MaxY;
     public float LevitateRateMetersPerSecond;
 
     private Rigidbody rb;
+    private Outline outline;
 
     public float MaxRange => 5;
 
     public void CastSpell () {
-        if (IsLevitating) {
-            StopLevitating ();
-        } else {
-            StartLevitating ();
-        }
+        StartLevitating ();
+        CameraManager.Instance.ToggleCamera (2);
+        CameraManager.Instance.SetCameraLookAt (transform);
     }
 
     public string GetSpellId () {
@@ -40,31 +41,19 @@ public class Levitatable : MonoBehaviour, ICastable {
         rb.constraints = RigidbodyConstraints.None;
     }
 
-    void EndSpell () {
-        //if it's kinematic, we want to turn off levitating. 
-        //This makes kinematic add the option for puzzles that just need to set the position of something 
-        //but dont want it to alternate between gravity enabled physics and kinematic
-        if (rb.isKinematic) {
-            IsLevitating = false;
-        }
+    public void EndSpell () {
+        StopLevitating ();
+        CameraManager.Instance.SetCameraLookAt (null);
+        CameraManager.Instance.ToggleCamera (0);
     }
 
     void Start () {
         rb = GetComponent<Rigidbody> ();
+        outline = GetComponent<Outline> ();
     }
 
     void Update () {
         if (IsLevitating) {
-            // update y position of levitation
-            //Vector3 posXZ = new Vector3(transform.position.x, 0, transform.position.z);
-            //Vector3 otherPosXZ = new Vector3(magicController.transform.position.x, 0, magicController.transform.position.z);
-            //float distanceXZ = Vector3.Distance(posXZ, otherPosXZ);
-
-            //var screenPoint = Input.mousePosition;
-            //screenPoint.z = distanceToObject;
-            //float newY = Mathf.Clamp(Camera.main.ScreenToWorldPoint(screenPoint).y, MinY, MaxY);
-            //transform.position = new Vector3(transform.position.x, newY, transform.position.z);
-
             float maxDeltaMovement = Time.deltaTime * LevitateRateMetersPerSecond * InputManager.Instance.LookInput.y;
 
             float newY = Mathf.Clamp (transform.position.y + maxDeltaMovement, MinY, MaxY);
@@ -73,12 +62,8 @@ public class Levitatable : MonoBehaviour, ICastable {
         }
     }
 
-    // public bool DoLockMouse () {
-    //     return true;
-    // }
-
     public void OnStartHover () {
-        Debug.Log ("Interaction OnStartHover!");
+        outline.enabled = true;
     }
 
     public void OnInteract () {
@@ -86,6 +71,6 @@ public class Levitatable : MonoBehaviour, ICastable {
     }
 
     public void OnEndHover () {
-        Debug.Log ("Interaction OnEndHover!");
+        outline.enabled = false;
     }
 }

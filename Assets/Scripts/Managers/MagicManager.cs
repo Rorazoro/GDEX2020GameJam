@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -8,11 +9,13 @@ public class MagicManager : SingletonBehaviour<MagicManager> {
     public bool IsSpellActive = false;
     public GameObject NodePanel;
     public GameObject MoveCam;
+    public GameObject CastingCam;
     public GameObject SpellCam;
 
     private List<Transform> lineNodes = new List<Transform> ();
     private LineRenderer lineRenderer;
     private ICastable CurrentSpell;
+    [SerializeField]
     private string CurrentSpellId;
 
     void Start () {
@@ -23,42 +26,40 @@ public class MagicManager : SingletonBehaviour<MagicManager> {
     void Update () {
         if (InputManager.Instance.EndCastingInput) {
             EndCasting ();
+            EndSpell ();
         } else if (InputManager.Instance.DrawInput && IsCasting) {
             UpdateTrace ();
         } else if (!InputManager.Instance.DrawInput && IsCasting) {
-            CurrentSpell.CastSpell ();
-            EndCasting ();
+            CheckForActiveSpell ();
+            if (IsSpellActive) {
+                EndCasting ();
+                CastSpell ();
+            }
         }
     }
 
-    private void CastSpell () {
+    private void CheckForActiveSpell () {
         string SpellId = "";
         foreach (var node in lineNodes) {
             SpellId += node.name;
         }
-
-        bool spellCast = false;
-
         if (CurrentSpellId.Equals (SpellId)) {
-            CurrentSpell.CastSpell ();
-            spellCast = true;
+            IsSpellActive = true;
         }
+    }
 
-        if (!spellCast) {
-            //Nothing to recieve the cast! end the spell here
-            EndSpell ();
-        }
+    private void CastSpell () {
+        CurrentSpell.CastSpell ();
     }
 
     public void StartCasting (ICastable spellObject) {
         if (!IsCasting) {
-            //Cursor.lockState = CursorLockMode.Confined;
+            Cursor.lockState = CursorLockMode.Confined;
             CurrentSpell = spellObject;
             CurrentSpellId = spellObject.GetSpellId ();
             IsCasting = true;
-            IsSpellActive = true;
             InputManager.Instance.SwitchInputMap ("SpellCasting");
-            ToggleCameraView ();
+            CameraManager.Instance.ToggleCamera (1);
             NodePanel.SetActive (true);
             lineNodes.Clear ();
             lineRenderer.positionCount = 0;
@@ -71,23 +72,20 @@ public class MagicManager : SingletonBehaviour<MagicManager> {
             IsCasting = false;
             lineRenderer.enabled = false;
             NodePanel.SetActive (false);
-            ToggleCameraView ();
+            CameraManager.Instance.ToggleCamera (0);
             InputManager.Instance.SwitchInputMap ("Player");
+            //Cursor.lockState = CursorLockMode.Locked;
         }
     }
 
     public void EndSpell () {
-        //if for some reason the cast is still going on
-        EndCasting ();
-
         //This check is important so we dont trigger infinite loops
-        if (IsSpellActive) {
-            IsSpellActive = false;
-            CurrentSpell.CastSpell ();
-            CurrentSpell = null;
-            //Cursor.lockState = CursorLockMode.Locked;
-        }
-
+        IsSpellActive = false;
+        CurrentSpell.EndSpell ();
+        CurrentSpell = null;
+        CurrentSpellId = string.Empty;
+        CameraManager.Instance.ToggleCamera (0);
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void UpdateTrace () {
@@ -118,10 +116,5 @@ public class MagicManager : SingletonBehaviour<MagicManager> {
 
         lineRenderer.positionCount = linePoints.Count;
         lineRenderer.SetPositions (linePoints.ToArray ());
-    }
-
-    private void ToggleCameraView () {
-        MoveCam.SetActive (!MoveCam.activeSelf);
-        SpellCam.SetActive (!SpellCam.activeSelf);
     }
 }

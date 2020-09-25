@@ -17,6 +17,7 @@ public class ThirdPersonController : MonoBehaviour {
 
     private void Awake () {
         _controller = GetComponent<CharacterController> ();
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update () {

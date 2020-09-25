@@ -30,14 +30,6 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Return",
-                    "type": "Button",
-                    "id": "2e5cb0b8-15db-4722-96bd-4ff09194380a",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "Interact",
                     "type": "Button",
                     "id": "da79a10c-233f-4527-95b9-727eddc4611c",
@@ -233,17 +225,6 @@
                 },
                 {
                     "name": "",
-                    "id": "53ea31e8-4a4b-4c9a-88af-01014604bc60",
-                    "path": "<Keyboard>/enter",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Return",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "f4a5ed03-63b2-4b84-bfe5-8dc713d63546",
                     "path": "<Keyboard>/e",
                     "interactions": "",
@@ -275,6 +256,14 @@
                     "type": "Value",
                     "id": "622d76ca-86f2-4f1e-abcb-e465f9986413",
                     "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Toggle Console",
+                    "type": "Button",
+                    "id": "d9b68e77-0258-47bc-9c39-46450d40daf2",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 },
@@ -769,6 +758,17 @@
                     "action": "TrackedDeviceOrientation",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "97c9f512-75d6-4f98-bd6d-c262c37e8998",
+                    "path": "<Keyboard>/backquote",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Toggle Console",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -797,6 +797,14 @@
                     "type": "PassThrough",
                     "id": "c8fccf76-101b-4201-88a4-832abf5d5f3d",
                     "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Toggle Console",
+                    "type": "Button",
+                    "id": "df01e262-1c33-484e-8ae1-4756a03af9f6",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 }
@@ -832,6 +840,101 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Point",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "434c23f5-5543-4e86-99e6-a813d03501e5",
+                    "path": "<Keyboard>/backquote",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Toggle Console",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Debug",
+            "id": "3e5cb7ff-51bd-49af-ae16-feb510225499",
+            "actions": [
+                {
+                    "name": "Return",
+                    "type": "Button",
+                    "id": "411588cd-95a6-4225-affa-f403ea6a415b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Toggle Console",
+                    "type": "Button",
+                    "id": "a252ce88-a175-4d06-901d-b755eaf36759",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "PreviousCommand",
+                    "type": "Button",
+                    "id": "242a727d-2de6-4229-9e10-7e9788a3d5d3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "NextCommand",
+                    "type": "Button",
+                    "id": "5868662d-c7ad-46e8-a672-100c81d7d8da",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e5422fc2-3869-4caf-acc8-ea78110848a4",
+                    "path": "<Keyboard>/backquote",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Toggle Console",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1f7cfaf0-245a-499f-9188-126594894555",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Return",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b9872525-3a6d-473a-a713-ad6594cae5c5",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "PreviousCommand",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "65cf4da8-d643-44fb-ae09-63d19e200845",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "NextCommand",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

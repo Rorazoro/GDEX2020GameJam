@@ -9,16 +9,16 @@ public class InteractionController : MonoBehaviour {
 
     private void Update () {
         RaycastForInteractable ();
-        if (InputManager.Instance.InteractInput && currentTarget != null) {
-            currentTarget.OnInteract ();
+        if (InputManager.Instance.InteractInput && (currentTarget as IInteractable) != null) {
+            (currentTarget as IInteractable).OnInteract ();
         } else if (InputManager.Instance.CastInput) {
-            if (currentTarget != null) {
-                currentTarget.OnInteract ();
+            if ((currentTarget as ICastable) != null && !MagicManager.Instance.IsSpellActive) {
+                Debug.Log ("Starting Casting");
+                (currentTarget as ICastable).OnInteract ();
+            } else if (MagicManager.Instance.IsSpellActive) {
+                Debug.Log ("Ending Spell");
+                MagicManager.Instance.EndSpell ();
             }
-            // } else if (MagicManager.Instance.IsSpellActive) {
-            //     MagicManager.Instance.EndSpell ();
-            // }
-
         }
     }
 
