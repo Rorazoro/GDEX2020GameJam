@@ -21,8 +21,8 @@ public class DoorLevitateMultiPuzzle : MonoBehaviour
         var percentOpen = 0.0f;
         foreach(var levitator in Levitators)
         {
-            percentOpen += InvertPercent ? (levitator.transform.position.y - levitator.MinY) / (levitator.MaxY - levitator.MinY) 
-                                          : 1.0f - (levitator.transform.position.y - levitator.MinY) / (levitator.MaxY - levitator.MinY);
+            percentOpen += InvertPercent ? (levitator.transform.position.y - levitator.YPosMin) / (levitator.YPosMax - levitator.YPosMin) 
+                                          : 1.0f - (levitator.transform.position.y - levitator.YPosMin) / (levitator.YPosMax - levitator.YPosMin);
         }
 
         float percent = percentOpen/Levitators.Length;
