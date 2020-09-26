@@ -19,10 +19,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Jordan/Scripts/EvilPanda.cs" />
-        <option value="$PROJECT_DIR$/Assets/Jordan/Scripts/MagnetismSpell.cs" />
-        <option value="$PROJECT_DIR$/Assets/Jordan/Scripts/ForceSpell.cs" />
         <option value="$PROJECT_DIR$/Assets/Jordan/Scripts/FireAwake.cs" />
         <option value="$PROJECT_DIR$/Assets/Jordan/Scripts/MoveWater.cs" />
+        <option value="$PROJECT_DIR$/Assets/Jordan/Scripts/MagnetismSpell.cs" />
+        <option value="$PROJECT_DIR$/Assets/Jordan/Scripts/ForceSpell.cs" />
         <option value="$PROJECT_DIR$/Assets/Jordan/Scripts/SleepSpell.cs" />
       </list>
     </option>
@@ -67,7 +67,7 @@
       <option name="presentableId" value="Default" />
       <updated>1600630685179</updated>
       <workItem from="1600630697292" duration="4635000" />
-      <workItem from="1601124329484" duration="3491000" />
+      <workItem from="1601124329484" duration="4211000" />
     </task>
     <servers />
   </component>
