@@ -12,4 +12,22 @@ public class MinimapScript : MonoBehaviour {
 
         transform.rotation = Quaternion.Euler (90f, player.eulerAngles.y, 0f);
     }
+
+    public void ZoomIn () {
+        float size = this.GetComponent<Camera> ().orthographicSize;
+
+        if (size > 10) {
+            size = size - 5;
+            this.GetComponent<Camera> ().orthographicSize = size;
+        }
+    }
+
+    public void ZoomOut () {
+        float size = this.GetComponent<Camera> ().orthographicSize;
+
+        if (size < 150) {
+            size = size + 5;
+            this.GetComponent<Camera> ().orthographicSize = size;
+        }
+    }
 }
