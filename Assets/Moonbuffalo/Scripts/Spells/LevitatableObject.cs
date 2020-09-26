@@ -55,8 +55,8 @@ public class LevitatableObject : MonoBehaviour, ICastable
         {
             float maxDeltaMovement = Time.deltaTime * LevitateRate * InputManager.Instance.MouseDelta.y;
 
-            float newY = Mathf.Clamp(transform.position.y+ maxDeltaMovement, YPosMin, YPosMax);
-            transform.position = new Vector3(transform.position.x, newY, transform.position.z);
+            float newY = Mathf.Clamp(transform.localPosition.y+ maxDeltaMovement, YPosMin, YPosMax);
+            transform.localPosition = new Vector3(transform.localPosition.x, newY, transform.localPosition.z);
         }
 
         
