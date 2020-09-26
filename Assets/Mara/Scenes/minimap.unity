@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0000038146973, y: 0.0000019073486}
-  m_SizeDelta: {x: 40.79769, y: 37.26487}
+  m_AnchoredPosition: {x: 0.0002002716, y: -0.00010204315}
+  m_SizeDelta: {x: 0.00045013428, y: -0.00019645691}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &224261245
 MonoBehaviour:
@@ -1454,8 +1454,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0000038146973, y: 0.0000019073486}
-  m_SizeDelta: {x: 40.79769, y: 37.26487}
+  m_AnchoredPosition: {x: -0.00024414062, y: 0.000005722046}
+  m_SizeDelta: {x: 0.0004272461, y: 0.0000076293945}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1314419825
 MonoBehaviour:
@@ -1583,8 +1583,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2009258962}
         m_TargetAssemblyTypeName: MinimapPandaScript, Assembly-CSharp
-        m_MethodName: PandaProgress
-        m_Mode: 3
+        m_MethodName: AddPanda
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2290,5 +2290,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointPrefab: {fileID: 1009338838}
   Parent: {fileID: 2009258961}
-  PandaNumber: 30
+  TotalPandaNumber: 30
   circleRadius: 6

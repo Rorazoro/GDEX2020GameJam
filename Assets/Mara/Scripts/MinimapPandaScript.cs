@@ -7,11 +7,13 @@ public class MinimapPandaScript : MonoBehaviour {
 
     public GameObject pointPrefab;
     public Transform Parent;
-    public int PandaNumber = 0;
+    public int TotalPandaNumber = 0;
     public float circleRadius = 6;
 
+    int CollectedPandaCount = 0;
+
     void Start () {
-        instantiateInCircle (pointPrefab, new Vector3 (0, 0, 0), PandaNumber);
+        instantiateInCircle (pointPrefab, new Vector3 (0, 0, 0), TotalPandaNumber);
         Parent.Rotate (90, 0, 0);
     }
 
@@ -25,7 +27,15 @@ public class MinimapPandaScript : MonoBehaviour {
         }
     }
 
+    public void AddPanda () {
+        CollectedPandaCount++;
+        if (CollectedPandaCount <= TotalPandaNumber)
+            PandaProgress (CollectedPandaCount);
+    }
+
     public void PandaProgress (int count) {
+        int CollectedPandaCount = count;
+
         for (int i = 0; i < Parent.childCount; i++) {
             if (i < count) {
                 GameObject child = Parent.gameObject.transform.GetChild (i).gameObject;
