@@ -12,10 +12,12 @@
             <e p="Caster.cs" t="Include" />
             <e p="DiscreteMagicController.cs" t="Include" />
             <e p="EvilPanda.cs" t="Include" />
+            <e p="FireAwake.cs" t="Include" />
             <e p="ForceSpell.cs" t="Include" />
             <e p="ICastSpell.cs" t="Include" />
             <e p="LevitatableObject.cs" t="Include" />
             <e p="MagnetismSpell.cs" t="Include" />
+            <e p="MoveWater.cs" t="Include" />
             <e p="SleepSpell.cs" t="Include" />
           </e>
         </e>
