@@ -168,8 +168,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InteractDist: 5
   YPosMin: 0
-  YPosMax: 10
-  LevitateRate: 5
+  YPosMax: 7
+  LevitateRate: 10
   ViewCamera: {fileID: 1603114172374603602}
 --- !u!1001 &8970321915151952396
 PrefabInstance:
@@ -230,7 +230,16 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7657134876451474505, guid: a1c516a69050db94f9dfc6e72ef3a9a1, type: 3}
+      propertyPath: m_Size.y
+      value: 2.015749
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657134876451474505, guid: a1c516a69050db94f9dfc6e72ef3a9a1, type: 3}
+      propertyPath: m_Center.y
+      value: 0.50787485
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 927200672, guid: a1c516a69050db94f9dfc6e72ef3a9a1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a1c516a69050db94f9dfc6e72ef3a9a1, type: 3}
 --- !u!4 &1603114173590205250 stripped
 Transform:

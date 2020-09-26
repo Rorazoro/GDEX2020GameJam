@@ -50,7 +50,7 @@ public class LevitatableObject : MonoBehaviour, ICastable
     }
 
     void Update()
-    {
+    {        outline.enabled = isHovering || isLevitating;
         if(isSpellActive && isLevitating)
         {
             float maxDeltaMovement = Time.deltaTime * LevitateRate * InputManager.Instance.MouseDelta.y;
@@ -60,7 +60,7 @@ public class LevitatableObject : MonoBehaviour, ICastable
         }
 
         
-        outline.enabled = isHovering || isLevitating;
+
     }
 
 
