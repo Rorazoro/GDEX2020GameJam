@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
-
+/*
 public class ForceSpell : MonoBehaviour
 {
     string mySpellPattern = "force";
@@ -43,3 +43,4 @@ public class ForceSpell : MonoBehaviour
     }
 
 }
+*/

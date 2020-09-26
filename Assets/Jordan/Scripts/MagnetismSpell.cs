@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
 public class MagnetismSpell : MonoBehaviour, ICastSpell
 {
     string mySpellPattern = "magnetize";
@@ -52,3 +52,4 @@ public class MagnetismSpell : MonoBehaviour, ICastSpell
         gameObject.transform.Translate(h, 0, v);
     }
 }
+*/

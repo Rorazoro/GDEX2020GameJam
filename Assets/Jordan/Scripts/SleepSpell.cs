@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
 public class SleepSpell : MonoBehaviour, ICastSpell
 {
     private string mySpellPattern = "sleep";
@@ -23,4 +23,4 @@ public class SleepSpell : MonoBehaviour, ICastSpell
         gameObject.GetComponent<EvilPanda>().WakeUp();
     }
     
-}
+}*/
