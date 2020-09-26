@@ -54,7 +54,7 @@ public class MagicManager : SingletonBehaviour<MagicManager> {
 
     public void StartCasting (ICastable spellObject) {
         if (!IsCasting) {
-            Cursor.lockState = CursorLockMode.Confined;
+            InputManager.Instance.SwitchCursorLockState(CursorLockMode.Confined);
             CurrentSpell = spellObject;
             CurrentSpellId = spellObject.GetSpellId ();
             IsCasting = true;
@@ -79,13 +79,16 @@ public class MagicManager : SingletonBehaviour<MagicManager> {
     }
 
     public void EndSpell () {
-        //This check is important so we dont trigger infinite loops
-        IsSpellActive = false;
-        CurrentSpell.EndSpell ();
-        CurrentSpell = null;
-        CurrentSpellId = string.Empty;
-        CameraManager.Instance.ToggleCamera (0);
-        Cursor.lockState = CursorLockMode.Locked;
+        if (IsSpellActive)
+        {
+            IsSpellActive = false;
+            CurrentSpell.EndSpell();
+            CurrentSpell = null;
+            CurrentSpellId = string.Empty;
+            CameraManager.Instance.ToggleCamera(0);
+            InputManager.Instance.SwitchInputMap("Player");
+            InputManager.Instance.SwitchCursorLockState(CursorLockMode.Locked);
+        }
     }
 
     private void UpdateTrace () {
