@@ -11,9 +11,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+<<<<<<< HEAD
+    <setting file="file://$PROJECT_DIR$/../Sonar/Sonar/Assets/Scripts/FishComponents/Patrol.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Audio/AudioHandler.cs" root0="FORCE_HIGHLIGHTING" />
+=======
     <setting file="file://$PROJECT_DIR$/Assets/Jordan/Scripts/MagnetismSpell.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Sonar/Sonar/Assets/Scripts/FishComponents/Patrol.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Jordan/Scripts/FireAwake.cs" root0="FORCE_HIGHLIGHTING" />
+>>>>>>> master
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -24,6 +29,10 @@
         <option value="$PROJECT_DIR$/Assets/Jordan/Scripts/MagnetismSpell.cs" />
         <option value="$PROJECT_DIR$/Assets/Jordan/Scripts/ForceSpell.cs" />
         <option value="$PROJECT_DIR$/Assets/Jordan/Scripts/SleepSpell.cs" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/Assets/Audio/AudioHandler.cs" />
+=======
+>>>>>>> master
       </list>
     </option>
   </component>
@@ -67,7 +76,11 @@
       <option name="presentableId" value="Default" />
       <updated>1600630685179</updated>
       <workItem from="1600630697292" duration="4635000" />
+<<<<<<< HEAD
+      <workItem from="1601124329484" duration="7452000" />
+=======
       <workItem from="1601124329484" duration="4211000" />
+>>>>>>> master
     </task>
     <servers />
   </component>
