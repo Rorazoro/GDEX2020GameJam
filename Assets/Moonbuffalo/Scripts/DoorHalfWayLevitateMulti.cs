@@ -13,7 +13,7 @@ public class DoorHalfWayLevitateMulti : MonoBehaviour
 
     private void Start()
     {
-        StartPosition = transform.position;
+        StartPosition = transform.localPosition;
     }
 
     void Update()
@@ -21,12 +21,12 @@ public class DoorHalfWayLevitateMulti : MonoBehaviour
         var percentOpen = 0.0f;
         foreach (var levitator in Levitators)
         {
-            percentOpen += Mathf.Abs((levitator.transform.position.y - levitator.YPosMin) / (levitator.YPosMax - levitator.YPosMin)-.5f);
+            percentOpen += Mathf.Abs((levitator.transform.localPosition.y - levitator.YPosMin) / (levitator.YPosMax - levitator.YPosMin)-.5f);
         }
 
         float percent = InvertPercent ? percentOpen / Levitators.Length * 2.0f
                                       : 1.0f - percentOpen / Levitators.Length * 2.0f;
 
-        transform.position = StartPosition + DoorHeight * percent;
+        transform.localPosition = StartPosition + DoorHeight * percent;
     }
 }

@@ -13,7 +13,7 @@ public class DoorLevitateMultiPuzzle : MonoBehaviour
 
     private void Start()
     {
-        StartPosition = transform.position;
+        StartPosition = transform.localPosition;
     }
 
     void Update()
@@ -21,12 +21,12 @@ public class DoorLevitateMultiPuzzle : MonoBehaviour
         var percentOpen = 0.0f;
         foreach(var levitator in Levitators)
         {
-            percentOpen += InvertPercent ? (levitator.transform.position.y - levitator.YPosMin) / (levitator.YPosMax - levitator.YPosMin) 
-                                          : 1.0f - (levitator.transform.position.y - levitator.YPosMin) / (levitator.YPosMax - levitator.YPosMin);
+            percentOpen += InvertPercent ? (levitator.transform.localPosition.y - levitator.YPosMin) / (levitator.YPosMax - levitator.YPosMin) 
+                                          : 1.0f - (levitator.transform.localPosition.y - levitator.YPosMin) / (levitator.YPosMax - levitator.YPosMin);
         }
 
         float percent = percentOpen/Levitators.Length;
 
-        transform.position = StartPosition + DoorHeight * percent;
+        transform.localPosition = StartPosition + DoorHeight * percent;
     }
 }
