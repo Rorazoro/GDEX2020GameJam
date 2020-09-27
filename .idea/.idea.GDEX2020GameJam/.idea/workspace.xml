@@ -11,9 +11,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Jordan/Scripts/FireAwake.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Jordan/Scripts/MagnetismSpell.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Sonar/Sonar/Assets/Scripts/FishComponents/Patrol.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Jordan/Scripts/FireAwake.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -68,6 +68,7 @@
       <updated>1600630685179</updated>
       <workItem from="1600630697292" duration="4635000" />
       <workItem from="1601124329484" duration="4211000" />
+      <workItem from="1601166031206" duration="607000" />
     </task>
     <servers />
   </component>
@@ -78,5 +79,11 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1441" y="387" key="#Notifications" timestamp="1601165968750">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1441" y="387" key="#Notifications/0.0.2560.1400/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601165968750" />
   </component>
 </project>
