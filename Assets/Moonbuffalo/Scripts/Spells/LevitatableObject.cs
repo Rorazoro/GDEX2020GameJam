@@ -19,6 +19,7 @@ public class LevitatableObject : MonoBehaviour, ICastable
     private bool isLevitating = false;
     private bool isSpellActive = false;
     private bool isHovering = false;
+    private RigidbodyConstraints initConstraints;
 
     public float MaxRange => InteractDist;
 
@@ -40,13 +41,15 @@ public class LevitatableObject : MonoBehaviour, ICastable
         //End the spell right away if they are de-activating the levitation
         isLevitating = false;
         rb.useGravity = true;
-        rb.constraints = RigidbodyConstraints.None;
+        rb.constraints = initConstraints;
+        MagicManager.Instance.EndSpell();
     }
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         outline = GetComponent<Outline>();
+        initConstraints = rb.constraints;
     }
 
     void Update()
