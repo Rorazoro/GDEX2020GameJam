@@ -13,13 +13,13 @@ public class DoorLevitateSinglePuzzle : MonoBehaviour
 
     private void Start()
     {
-        StartPosition = transform.position;
+        StartPosition = transform.localPosition;
     }
 
     void Update()
     {
-        float percent = InvertPercent ? (Levitator.transform.position.y - Levitator.MinY) / (Levitator.MaxY - Levitator.MinY)
-                                             : 1.0f - (Levitator.transform.position.y - Levitator.MinY) / (Levitator.MaxY - Levitator.MinY);
-        transform.position = StartPosition + DoorHeight * percent;
+        float percent = InvertPercent ? (Levitator.transform.localPosition.y - Levitator.YPosMin) / (Levitator.YPosMax - Levitator.YPosMin)
+                                             : 1.0f - (Levitator.transform.localPosition.y - Levitator.YPosMin) / (Levitator.YPosMax - Levitator.YPosMin);
+        transform.localPosition = StartPosition + DoorHeight * percent;
     }
 }

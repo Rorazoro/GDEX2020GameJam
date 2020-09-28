@@ -793,6 +793,14 @@
                     "interactions": ""
                 },
                 {
+                    "name": "MouseDelta",
+                    "type": "Value",
+                    "id": "b7e4bad0-374a-43d7-b47b-eb18b740d73f",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "Point",
                     "type": "PassThrough",
                     "id": "c8fccf76-101b-4201-88a4-832abf5d5f3d",
@@ -851,6 +859,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Toggle Console",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2e102724-6714-4683-ab2b-3ebf6d3011ea",
+                    "path": "<Pointer>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse;Touch",
+                    "action": "MouseDelta",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
