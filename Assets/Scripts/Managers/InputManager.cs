@@ -32,6 +32,8 @@ public class InputManager : SingletonBehaviour<InputManager> {
     private bool _drawInput;
     [SerializeField]
     private bool _endCastingInput;
+    [SerializeField]
+    private Vector2 _mouseDelta;
 
     //Debug ActionMap
     [SerializeField]
@@ -61,6 +63,8 @@ public class InputManager : SingletonBehaviour<InputManager> {
     public Vector2 PointInput { get => _pointInput; }
     public bool DrawInput { get => _drawInput; }
     public bool EndCastingInput { get => _endCastingInput; }
+    public Vector2 MouseDelta { get => _mouseDelta; }
+
 
     //Debug ActionMap
     public bool ToggleConsoleInput { get => _toggleConsoleInput; }
@@ -123,6 +127,10 @@ public class InputManager : SingletonBehaviour<InputManager> {
         } else if (context.canceled) {
             _endCastingInput = false;
         }
+    }
+    public void OnMouseDelta(InputAction.CallbackContext context)
+    {
+        _mouseDelta = context.ReadValue<Vector2>();
     }
 
     //Debug ActionMap

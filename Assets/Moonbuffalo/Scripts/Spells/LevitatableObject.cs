@@ -1,33 +1,27 @@
-﻿using System.Collections;
+﻿using Cinemachine;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class LevitatableObject : MonoBehaviour, ICastSpell
+[RequireComponent(typeof(Outline))]
+public class LevitatableObject : MonoBehaviour, ICastable
 {
     static string SpellId = "159AB";
 
-    public bool IsLevitating;
-    public float MinY, MaxY;
-    public float LevitateRateMetersPerSecond;
+    public float InteractDist;
+    public float YPosMin, YPosMax;
+    public float LevitateRate;
+    public Transform ViewCamera;
 
     private Rigidbody rb;
-    private DiscreteMagicController magicController;
+    private Outline outline;
+    private bool isLevitating = false;
+    private bool isSpellActive = false;
+    private bool isHovering = false;
+    private RigidbodyConstraints initConstraints;
 
-    public void CastSpell(DiscreteMagicController magicController)
-    {
-        this.magicController = magicController;
-        this.magicController.OnEndSpell.AddListener(OnEndSpell);
-
-        if (IsLevitating)
-        {
-            StopLevitating();
-        }
-        else
-        {
-            StartLevitating();
-        }
-    }
+    public float MaxRange => InteractDist;
 
     public string GetSpellId()
     {
@@ -39,62 +33,97 @@ public class LevitatableObject : MonoBehaviour, ICastSpell
         //disable gravity and freeze the object
         rb.useGravity = false;
         rb.constraints = RigidbodyConstraints.FreezeAll;
-        IsLevitating = true;
+        isLevitating = true;
     }
 
     private void StopLevitating()
     {
         //End the spell right away if they are de-activating the levitation
-        IsLevitating = false;
+        isLevitating = false;
         rb.useGravity = true;
-        rb.constraints = RigidbodyConstraints.None;
-        magicController?.EndSpell();
-    }
-
-    void OnEndSpell()
-    {
-        this.magicController.OnEndSpell.RemoveListener(OnEndSpell);
-        magicController = null;
-
-        //if it's kinematic, we want to turn off levitating. 
-        //This makes kinematic add the option for puzzles that just need to set the position of something 
-        //but dont want it to alternate between gravity enabled physics and kinematic
-        if (rb.isKinematic)
-        {
-            IsLevitating = false;
-        }
+        rb.constraints = initConstraints;
+        MagicManager.Instance.EndSpell();
     }
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        outline = GetComponent<Outline>();
+        initConstraints = rb.constraints;
     }
 
     void Update()
-    {
-        if(magicController != null && magicController.IsSpellActive && IsLevitating)
+    {        outline.enabled = isHovering || isLevitating;
+        if(isSpellActive && isLevitating)
         {
-            // update y position of levitation
-            //Vector3 posXZ = new Vector3(transform.position.x, 0, transform.position.z);
-            //Vector3 otherPosXZ = new Vector3(magicController.transform.position.x, 0, magicController.transform.position.z);
-            //float distanceXZ = Vector3.Distance(posXZ, otherPosXZ);
+            float maxDeltaMovement = Time.deltaTime * LevitateRate * InputManager.Instance.MouseDelta.y;
 
-            //var screenPoint = Input.mousePosition;
-            //screenPoint.z = distanceToObject;
-            //float newY = Mathf.Clamp(Camera.main.ScreenToWorldPoint(screenPoint).y, MinY, MaxY);
-            //transform.position = new Vector3(transform.position.x, newY, transform.position.z);
+            float newY = Mathf.Clamp(transform.localPosition.y+ maxDeltaMovement, YPosMin, YPosMax);
+            transform.localPosition = new Vector3(transform.localPosition.x, newY, transform.localPosition.z);
+        }
+
+        
+
+    }
 
 
-            float maxDeltaMovement = Time.deltaTime * LevitateRateMetersPerSecond * Input.GetAxis("Mouse Y");
+    public void CastSpell()
+    {
 
-            float newY = Mathf.Clamp(transform.position.y+ maxDeltaMovement, MinY, MaxY);
-            transform.position = new Vector3(transform.position.x, newY, transform.position.z);
+        CameraManager.Instance.ToggleCamera(2);
 
+        if(ViewCamera!=null)
+        {
+            CameraManager.Instance.Cameras[2].transform.position = ViewCamera.position;
+            CameraManager.Instance.Cameras[2].transform.rotation = ViewCamera.rotation;
+            CameraManager.Instance.SetCameraLookAt(null);
+            CameraManager.Instance.SetCameraFollow(null);
+        }
+        else
+        {
+            CameraManager.Instance.SetCameraLookAt(transform);
+        }
+
+        InputManager.Instance.SwitchInputMap("SpellCasting");
+
+        
+
+        isSpellActive = true;
+        if (isLevitating)
+        {
+            StopLevitating();
+        }
+        else
+        {
+            StartLevitating();
         }
     }
 
-    public bool DoLockMouse()
+    public void EndSpell()
     {
-        return true;
+        isSpellActive = false;
+        //if it's kinematic, we want to turn off levitating. 
+        //This makes kinematic add the option for puzzles that just need to set the position of something 
+        //but dont want it to alternate between non-kinematic and kinematic
+        if (rb.isKinematic)
+        {
+            isLevitating = false;
+        }
+    }
+
+    public void OnStartHover()
+    {
+        isHovering = true;
+    }
+
+    public void OnInteract()
+    {
+        MagicManager.Instance.StartCasting(this);
+
+    }
+
+    public void OnEndHover()
+    {
+        isHovering = false;
     }
 }
