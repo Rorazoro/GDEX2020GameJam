@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class DetectClosePanda : MonoBehaviour {
 
-    void Update () {
-        
-        DetectClosestPanda ();
-    }
+    // void Update () {
 
-    void DetectClosestPanda () {
+    //     DetectClosestPanda ();
+    // }
+
+    public void DetectClosestPanda (GameObject player) {
         float distanceToClosestPanda = Mathf.Infinity;
         Panda closest = null;
 
         Panda[] allPandas = GameObject.FindObjectsOfType<Panda> ();
 
         foreach (Panda currentPanda in allPandas) {
-            float distanceToPanda = (currentPanda.transform.position - this.transform.position).sqrMagnitude;
+            float distanceToPanda = (currentPanda.transform.position - player.transform.position).sqrMagnitude;
             if (distanceToPanda < distanceToClosestPanda) {
                 distanceToClosestPanda = distanceToPanda;
                 closest = currentPanda;
             }
 
         }
-        Debug.DrawLine (this.transform.position, closest.transform.position);
+        Debug.DrawLine (player.transform.position, closest.transform.position);
 
     }
 }

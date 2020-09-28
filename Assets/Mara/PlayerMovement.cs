@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour {
     private float jumpHeight = 1.0f;
     private float gravityValue = -9.81f;
 
+    public MinimapPandaScript minimapPandaScript;
+
     private void Start () {
         controller = gameObject.AddComponent<CharacterController> ();
     }
@@ -28,15 +30,37 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         // Changes the height position of the player..
-        if (Input.GetButtonDown ("Jump")) {
-            DetectSpell ();
+        if (Input.GetKeyDown (KeyCode.Space)) {
+            DetectClosestPanda (this.gameObject);
+
         }
 
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move (playerVelocity * Time.deltaTime);
     }
 
-    void DetectSpell () {
+    public void DetectClosestPanda (GameObject player) {
+        float distanceToClosestPanda = Mathf.Infinity;
+        Panda closest = null;
+
+        Panda[] allPandas = GameObject.FindObjectsOfType<Panda> ();
+
+        foreach (Panda currentPanda in allPandas) {
+            float distanceToPanda = (currentPanda.transform.position - player.transform.position).sqrMagnitude;
+            if (distanceToPanda < distanceToClosestPanda) {
+                distanceToClosestPanda = distanceToPanda;
+                closest = currentPanda;
+            }
+
+        }
+        minimapPandaScript.MarkPandaLocation (closest.transform.position);
+        //Debug.DrawLine (player.transform.position, closest.transform.position);
 
     }
+
+    public void CollectPanda (GameObject panda) {
+        minimapPandaScript.AddPanda ();
+        Destroy (panda);
+    }
+
 }
