@@ -35,8 +35,6 @@ public class MoveWater : MonoBehaviour
                 if (duration <= 0)
                 {
                     canMove = false;
-                    //Make call to panda tracker
-                    print("Water Movement done");
                 }
                 else
                 {
@@ -47,7 +45,7 @@ public class MoveWater : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            WaterMovement();
+            //WaterMovement();
         }
     }
 }
