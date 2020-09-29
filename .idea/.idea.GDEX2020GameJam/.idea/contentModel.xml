@@ -21,6 +21,7 @@
             <e p="PuzzleTagEnter.cs" t="Include" />
             <e p="RockWaterfallBlock.cs" t="Include" />
             <e p="SleepSpell.cs" t="Include" />
+            <e p="WaterBucket.cs" t="Include" />
           </e>
         </e>
         <e p="Moonbuffalo" t="Include">

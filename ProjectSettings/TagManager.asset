@@ -8,6 +8,8 @@ TagManager:
   - Step
   - Rock
   - Torch
+  - Water
+  - Fire
   layers:
   - Default
   - TransparentFX
