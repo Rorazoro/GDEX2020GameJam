@@ -5141,6 +5141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59bda058cca5b3a4b8d9ef78d165cbd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fire: {fileID: 3692816803889692682}
   fireStartSound: {fileID: 8300000, guid: 042e7073c7053864cb1f8b1c02bd14e3, type: 3}
 --- !u!1 &3692816803889692680
 GameObject:

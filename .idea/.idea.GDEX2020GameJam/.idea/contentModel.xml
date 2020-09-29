@@ -7,12 +7,9 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-<<<<<<< HEAD
         <e p="Audio" t="Include">
           <e p="AudioHandler.cs" t="Include" />
         </e>
-        <e p="InputControls.cs" t="Include" />
-=======
         <e p="InputControls.cs" t="Include" />
         <e p="Jordan" t="Include">
           <e p="Scripts" t="Include">
@@ -21,10 +18,11 @@
             <e p="ForceSpell.cs" t="Include" />
             <e p="MagnetismSpell.cs" t="Include" />
             <e p="MoveWater.cs" t="Include" />
+            <e p="PuzzleTagEnter.cs" t="Include" />
+            <e p="RockWaterfallBlock.cs" t="Include" />
             <e p="SleepSpell.cs" t="Include" />
           </e>
         </e>
->>>>>>> master
         <e p="Moonbuffalo" t="Include">
           <e p="Scripts" t="Include">
             <e p="Camera" t="Include">
@@ -56,21 +54,6 @@
             <e p="Outline.cs" t="Include" />
           </e>
         </e>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-        <e p="Samples" t="Include">
-          <e p="Terrain Tools" t="Include">
-            <e p="0.1.0-preview" t="Include">
-              <e p="Terrain Assets" t="Include">
-                <e p="ThirdPartyNotices.txt" t="Include" />
-              </e>
-            </e>
-          </e>
-        </e>
->>>>>>> master
->>>>>>> master
         <e p="Scripts" t="Include">
           <e p="InteractionController.cs" t="Include" />
           <e p="Interfaces" t="Include">

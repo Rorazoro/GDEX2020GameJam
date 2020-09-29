@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/*
+
 public class MagnetismSpell : MonoBehaviour, ICastSpell
 {
     string mySpellPattern = "magnetize";
@@ -16,6 +16,16 @@ public class MagnetismSpell : MonoBehaviour, ICastSpell
         rb = gameObject.GetComponent<Rigidbody>();
     }
 
+    public string GetSpellId()
+    {
+        return "";
+    }
+
+    public bool DoLockMouse()
+    {
+        return false;
+    }
+    
     public void CastSpell(DiscreteMagicController magicController)
     {
         if (magicController.SpellId.Equals(mySpellPattern))
@@ -52,4 +62,3 @@ public class MagnetismSpell : MonoBehaviour, ICastSpell
         gameObject.transform.Translate(h, 0, v);
     }
 }
-*/
