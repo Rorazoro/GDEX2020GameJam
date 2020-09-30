@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\jorda\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\jorda\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_GDEX2020GameJam.1736375093.00" t="ExcludeRecursive" />
+    <e p="D:\GitHub\GDEX2020GameJam" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Audio" t="Include">
+          <e p="AudioHandler.cs" t="Include" />
+        </e>
+        <e p="InputControls.cs" t="Include" />
+        <e p="Jordan" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="EvilPanda.cs" t="Include" />
+            <e p="FireAwake.cs" t="Include" />
+            <e p="ForceSpell.cs" t="Include" />
+            <e p="MagnetismSpell.cs" t="Include" />
+            <e p="MoveWater.cs" t="Include" />
+            <e p="PuzzleTagEnter.cs" t="Include" />
+            <e p="RockWaterfallBlock.cs" t="Include" />
+            <e p="SleepSpell.cs" t="Include" />
+            <e p="WaterBucket.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Moonbuffalo" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="Camera" t="Include">
+              <e p="CameraBoomControls.cs" t="Include" />
+            </e>
+            <e p="DiscreteMagicCasting" t="Include">
+              <e p="Caster.cs" t="Include" />
+              <e p="DiscreteMagicController.cs" t="Include" />
+              <e p="ICastSpell.cs" t="Include" />
+              <e p="MagicHelperUI.cs" t="Include" />
+            </e>
+            <e p="DoorHalfWayLevitateMulti.cs" t="Include" />
+            <e p="DoorLevitateMultiPuzzle.cs" t="Include" />
+            <e p="DoorLevitateSinglePuzzle.cs" t="Include" />
+            <e p="Spells" t="Include">
+              <e p="LevitatableObject.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="QuickOutline" t="Include">
+          <e p="Readme.txt" t="Include" />
+          <e p="Resources" t="Include">
+            <e p="Shaders" t="Include">
+              <e p="OutlineFill.shader" t="Include" />
+              <e p="OutlineMask.shader" t="Include" />
+            </e>
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="Outline.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="InteractionController.cs" t="Include" />
+          <e p="Interfaces" t="Include">
+            <e p="ICastable.cs" t="Include" />
+            <e p="IInteractable.cs" t="Include" />
+          </e>
+          <e p="Levitatable.cs" t="Include" />
+          <e p="MagicController.cs" t="Include" />
+          <e p="Managers" t="Include">
+            <e p="CameraManager.cs" t="Include" />
+            <e p="DebugCommandBase.cs" t="Include" />
+            <e p="DebugManager.cs" t="Include" />
+            <e p="InputManager.cs" t="Include" />
+            <e p="MagicManager.cs" t="Include" />
+          </e>
+          <e p="ThirdPersonController.cs" t="Include" />
+          <e p="Utils" t="Include">
+            <e p="DDOL.cs" t="Include" />
+            <e p="SingletonBehaviour.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Terrain" t="Include">
+          <e p="Samples" t="Include">
+            <e p="Terrain Tools" t="Include">
+              <e p="0.1.0-preview" t="Include">
+                <e p="Terrain Assets" t="Include">
+                  <e p="ThirdPartyNotices.txt" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="TutorialInfo" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="Editor" t="Include">
+              <e p="ReadmeEditor.cs" t="Include" />
+            </e>
+            <e p="Readme.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="GDEX2020GameJam.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

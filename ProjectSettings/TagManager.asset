@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - MagicNode
+  - Step
+  - Rock
+  - Torch
+  - Water
+  - Fire
   layers:
   - Default
   - TransparentFX
