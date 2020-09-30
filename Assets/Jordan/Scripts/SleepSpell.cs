@@ -19,8 +19,8 @@ public class SleepSpell : MonoBehaviour, ICastSpell
     IEnumerator Sleeping()
     {
         gameObject.GetComponent<EvilPanda>().Sleep();
-        yield return new WaitForSeconds(5f);
-        gameObject.GetComponent<EvilPanda>().WakeUp();
+        //yield return new WaitForSeconds(5f);
+        //gameObject.GetComponent<EvilPanda>().WakeUp();
     }
     
 }*/
