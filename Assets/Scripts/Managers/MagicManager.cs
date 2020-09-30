@@ -18,6 +18,8 @@ public class MagicManager : SingletonBehaviour<MagicManager> {
     [SerializeField]
     private string CurrentSpellId;
 
+    private bool startedDrawing = false;
+
     void Start () {
         lineRenderer = NodePanel.GetComponent<LineRenderer> ();
         lineRenderer.positionCount = 0;
@@ -28,9 +30,14 @@ public class MagicManager : SingletonBehaviour<MagicManager> {
             EndCasting ();
             EndSpell ();
         } else if (InputManager.Instance.DrawInput && IsCasting) {
+            startedDrawing = true;
             UpdateTrace ();
         } else if (!InputManager.Instance.DrawInput && IsCasting) {
             CheckForActiveSpell ();
+            if (startedDrawing)
+            {
+                EndCasting();
+            }
             if (IsSpellActive) {
                 EndCasting ();
                 CastSpell ();
@@ -54,6 +61,7 @@ public class MagicManager : SingletonBehaviour<MagicManager> {
 
     public void StartCasting (ICastable spellObject) {
         if (!IsCasting) {
+            startedDrawing = false;
             InputManager.Instance.SwitchCursorLockState(CursorLockMode.Confined);
             CurrentSpell = spellObject;
             CurrentSpellId = spellObject.GetSpellId ();
