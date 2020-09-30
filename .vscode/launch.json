@@ -7,7 +7,9 @@
         {
             "name": "Unity Editor",
             "type": "unity",
+  
             "path": "/e:/My Code/PersonalProjects/Unity/GDEX2020GameJam/Library/EditorInstance.json",
+
             "request": "launch"
         },
         {
