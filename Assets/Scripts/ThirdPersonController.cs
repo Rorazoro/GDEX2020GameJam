@@ -16,6 +16,7 @@ public class ThirdPersonController : MonoBehaviour {
     public bool InvertY = false;
 
     public MinimapPandaScript minimapPandaScript;
+    public MinimapScript minimapScript;
 
     private void Awake () {
         _controller = GetComponent<CharacterController> ();
@@ -27,7 +28,12 @@ public class ThirdPersonController : MonoBehaviour {
         Move ();
         if (Input.GetKey (KeyCode.Space)) {
             DetectClosestPanda (this.gameObject);
-
+        }
+        if (Input.GetKey (KeyCode.Equals)) {
+            minimapScript.ZoomIn ();
+        }
+        if (Input.GetKey (KeyCode.Minus)) {
+            minimapScript.ZoomOut ();
         }
     }
 
@@ -131,5 +137,10 @@ public class ThirdPersonController : MonoBehaviour {
         minimapPandaScript.MarkPandaLocation (closest.transform.position);
         //Debug.DrawLine (player.transform.position, closest.transform.position);
 
+    }
+
+    public void CollectPanda (GameObject panda) {
+        minimapPandaScript.AddPanda ();
+        Destroy (panda);
     }
 }
