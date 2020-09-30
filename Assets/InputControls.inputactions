@@ -22,7 +22,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Toggle Console",
+                    "name": "ToggleConsole",
                     "type": "Button",
                     "id": "d0ebd608-2957-4a13-956a-d3a60655a157",
                     "expectedControlType": "Button",
@@ -219,7 +219,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Toggle Console",
+                    "action": "ToggleConsole",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -260,7 +260,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Toggle Console",
+                    "name": "ToggleConsole",
                     "type": "Button",
                     "id": "d9b68e77-0258-47bc-9c39-46450d40daf2",
                     "expectedControlType": "Button",
@@ -766,7 +766,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Toggle Console",
+                    "action": "ToggleConsole",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -793,14 +793,6 @@
                     "interactions": ""
                 },
                 {
-                    "name": "MouseDelta",
-                    "type": "Value",
-                    "id": "b7e4bad0-374a-43d7-b47b-eb18b740d73f",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "Point",
                     "type": "PassThrough",
                     "id": "c8fccf76-101b-4201-88a4-832abf5d5f3d",
@@ -809,7 +801,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Toggle Console",
+                    "name": "ToggleConsole",
                     "type": "Button",
                     "id": "df01e262-1c33-484e-8ae1-4756a03af9f6",
                     "expectedControlType": "Button",
@@ -842,23 +834,12 @@
                 },
                 {
                     "name": "",
-                    "id": "22da790d-cec7-4c3d-8937-b8c49b8fe0dd",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Point",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "434c23f5-5543-4e86-99e6-a813d03501e5",
                     "path": "<Keyboard>/backquote",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Toggle Console",
+                    "action": "ToggleConsole",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -869,7 +850,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse;Touch",
-                    "action": "MouseDelta",
+                    "action": "Point",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -888,7 +869,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Toggle Console",
+                    "name": "ToggleConsole",
                     "type": "Button",
                     "id": "a252ce88-a175-4d06-901d-b755eaf36759",
                     "expectedControlType": "Button",
@@ -920,7 +901,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Toggle Console",
+                    "action": "ToggleConsole",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

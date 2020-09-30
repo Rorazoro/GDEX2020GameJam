@@ -806,14 +806,6 @@ public class @InputControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""MouseDelta"",
-                    ""type"": ""Value"",
-                    ""id"": ""b7e4bad0-374a-43d7-b47b-eb18b740d73f"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
                     ""name"": ""Point"",
                     ""type"": ""PassThrough"",
                     ""id"": ""c8fccf76-101b-4201-88a4-832abf5d5f3d"",
@@ -855,17 +847,6 @@ public class @InputControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""22da790d-cec7-4c3d-8937-b8c49b8fe0dd"",
-                    ""path"": ""<Mouse>/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Point"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""434c23f5-5543-4e86-99e6-a813d03501e5"",
                     ""path"": ""<Keyboard>/backquote"",
                     ""interactions"": """",
@@ -882,7 +863,7 @@ public class @InputControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse;Touch"",
-                    ""action"": ""MouseDelta"",
+                    ""action"": ""Point"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1060,7 +1041,6 @@ public class @InputControls : IInputActionCollection, IDisposable
         m_SpellCasting = asset.FindActionMap("SpellCasting", throwIfNotFound: true);
         m_SpellCasting_Draw = m_SpellCasting.FindAction("Draw", throwIfNotFound: true);
         m_SpellCasting_EndCasting = m_SpellCasting.FindAction("EndCasting", throwIfNotFound: true);
-        m_SpellCasting_MouseDelta = m_SpellCasting.FindAction("MouseDelta", throwIfNotFound: true);
         m_SpellCasting_Point = m_SpellCasting.FindAction("Point", throwIfNotFound: true);
         m_SpellCasting_ToggleConsole = m_SpellCasting.FindAction("Toggle Console", throwIfNotFound: true);
         // Debug
@@ -1298,7 +1278,6 @@ public class @InputControls : IInputActionCollection, IDisposable
     private ISpellCastingActions m_SpellCastingActionsCallbackInterface;
     private readonly InputAction m_SpellCasting_Draw;
     private readonly InputAction m_SpellCasting_EndCasting;
-    private readonly InputAction m_SpellCasting_MouseDelta;
     private readonly InputAction m_SpellCasting_Point;
     private readonly InputAction m_SpellCasting_ToggleConsole;
     public struct SpellCastingActions
@@ -1307,7 +1286,6 @@ public class @InputControls : IInputActionCollection, IDisposable
         public SpellCastingActions(@InputControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Draw => m_Wrapper.m_SpellCasting_Draw;
         public InputAction @EndCasting => m_Wrapper.m_SpellCasting_EndCasting;
-        public InputAction @MouseDelta => m_Wrapper.m_SpellCasting_MouseDelta;
         public InputAction @Point => m_Wrapper.m_SpellCasting_Point;
         public InputAction @ToggleConsole => m_Wrapper.m_SpellCasting_ToggleConsole;
         public InputActionMap Get() { return m_Wrapper.m_SpellCasting; }
@@ -1325,9 +1303,6 @@ public class @InputControls : IInputActionCollection, IDisposable
                 @EndCasting.started -= m_Wrapper.m_SpellCastingActionsCallbackInterface.OnEndCasting;
                 @EndCasting.performed -= m_Wrapper.m_SpellCastingActionsCallbackInterface.OnEndCasting;
                 @EndCasting.canceled -= m_Wrapper.m_SpellCastingActionsCallbackInterface.OnEndCasting;
-                @MouseDelta.started -= m_Wrapper.m_SpellCastingActionsCallbackInterface.OnMouseDelta;
-                @MouseDelta.performed -= m_Wrapper.m_SpellCastingActionsCallbackInterface.OnMouseDelta;
-                @MouseDelta.canceled -= m_Wrapper.m_SpellCastingActionsCallbackInterface.OnMouseDelta;
                 @Point.started -= m_Wrapper.m_SpellCastingActionsCallbackInterface.OnPoint;
                 @Point.performed -= m_Wrapper.m_SpellCastingActionsCallbackInterface.OnPoint;
                 @Point.canceled -= m_Wrapper.m_SpellCastingActionsCallbackInterface.OnPoint;
@@ -1344,9 +1319,6 @@ public class @InputControls : IInputActionCollection, IDisposable
                 @EndCasting.started += instance.OnEndCasting;
                 @EndCasting.performed += instance.OnEndCasting;
                 @EndCasting.canceled += instance.OnEndCasting;
-                @MouseDelta.started += instance.OnMouseDelta;
-                @MouseDelta.performed += instance.OnMouseDelta;
-                @MouseDelta.canceled += instance.OnMouseDelta;
                 @Point.started += instance.OnPoint;
                 @Point.performed += instance.OnPoint;
                 @Point.canceled += instance.OnPoint;
@@ -1485,7 +1457,6 @@ public class @InputControls : IInputActionCollection, IDisposable
     {
         void OnDraw(InputAction.CallbackContext context);
         void OnEndCasting(InputAction.CallbackContext context);
-        void OnMouseDelta(InputAction.CallbackContext context);
         void OnPoint(InputAction.CallbackContext context);
         void OnToggleConsole(InputAction.CallbackContext context);
     }

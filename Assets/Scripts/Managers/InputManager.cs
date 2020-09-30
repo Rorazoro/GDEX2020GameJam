@@ -32,8 +32,6 @@ public class InputManager : SingletonBehaviour<InputManager> {
     private bool _drawInput;
     [SerializeField]
     private bool _endCastingInput;
-    [SerializeField]
-    private Vector2 _mouseDelta;
 
     //Debug ActionMap
     [SerializeField]
@@ -63,8 +61,6 @@ public class InputManager : SingletonBehaviour<InputManager> {
     public Vector2 PointInput { get => _pointInput; }
     public bool DrawInput { get => _drawInput; }
     public bool EndCastingInput { get => _endCastingInput; }
-    public Vector2 MouseDelta { get => _mouseDelta; }
-
 
     //Debug ActionMap
     public bool ToggleConsoleInput { get => _toggleConsoleInput; }
@@ -74,7 +70,48 @@ public class InputManager : SingletonBehaviour<InputManager> {
 
     private void Start () {
         playerInput = GetComponent<PlayerInput> ();
+
+        playerInput.onActionTriggered += OnActionTriggered;
     }
+
+    private void OnActionTriggered (InputAction.CallbackContext context) {
+        switch (context.action.name) {
+            case "Move":
+                OnMove (context);
+                break;
+            case "Look":
+                OnLook (context);
+                break;
+            case "Interact":
+                OnInteract (context);
+                break;
+            case "Cast":
+                OnCast (context);
+                break;
+            case "Draw":
+                OnDraw (context);
+                break;
+            case "EndCasting":
+                OnEndCasting (context);
+                break;
+            case "Point":
+                OnPoint (context);
+                break;
+            case "ToggleConsole":
+                OnToggleConsole (context);
+                break;
+            case "Return":
+                OnReturn (context);
+                break;
+            case "NextCommand":
+                OnNextCommand (context);
+                break;
+            case "PreviousCommand":
+                OnPreviousCommand (context);
+                break;
+        }
+    }
+
     public void SwitchInputMap (string actionMapName) {
         _previousInputActionMap = _currentInputActionMap;
         _currentInputActionMap = actionMapName;
@@ -127,10 +164,6 @@ public class InputManager : SingletonBehaviour<InputManager> {
         } else if (context.canceled) {
             _endCastingInput = false;
         }
-    }
-    public void OnMouseDelta(InputAction.CallbackContext context)
-    {
-        _mouseDelta = context.ReadValue<Vector2>();
     }
 
     //Debug ActionMap
