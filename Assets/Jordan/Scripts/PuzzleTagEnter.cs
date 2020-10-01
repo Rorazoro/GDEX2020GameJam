@@ -31,13 +31,17 @@ public class PuzzleTagEnter : MonoBehaviour
             }
         }
 
-        if (other.gameObject.tag == "FullBucket")
+        if (other.gameObject.tag == "Bucket")
         {
             if (waterBucketDouse)
             {
-                //SetPandaTrue
-                hutFire.SetActive(false);
+                if(other.GetComponent<WaterBucket>().isFull){
+                    //SetPandaTrue
+                    hutFire.SetActive(false);
+                }
+                
             }
         }
     }
+    
 }

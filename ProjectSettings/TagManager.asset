@@ -10,6 +10,8 @@ TagManager:
   - Torch
   - Water
   - Fire
+  - FullBucket
+  - Bucket
   layers:
   - Default
   - TransparentFX

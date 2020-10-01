@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8831878232937202675}
   - component: {fileID: 8831878232937202684}
   - component: {fileID: 8831878232937202685}
+  - component: {fileID: -3901676568564192265}
   m_Layer: 0
   m_Name: EvilPanda
   m_TagString: Untagged
@@ -155,3 +156,16 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   patrolPause: 10
+--- !u!114 &-3901676568564192265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8831878232937202686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faa5bc6515837bb4da351cda4fb3cf29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractDist: 2
