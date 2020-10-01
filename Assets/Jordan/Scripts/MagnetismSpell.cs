@@ -2,23 +2,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class MagnetismSpell : MonoBehaviour, ICastSpell
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Outline))]
+public class MagnetismSpell : MonoBehaviour, ICastable
 {
-    string mySpellPattern = "magnetize";
-    private DiscreteMagicController myMagicController;
+    static string SpellId = "267A5";
     private bool isControlling = false;
-    private Collider collider;
     private Rigidbody rb;
+    public float InteractDist;
+    public Transform ViewCamera;
+
+    private Outline outline;
+    private bool isSpellActive = false;
+    private RigidbodyConstraints initConstraints;
+    //private bool isHovering = false;
+    public float MaxRange => InteractDist;
     private void Awake()
     {
-        collider = gameObject.GetComponent<Collider>();
         rb = gameObject.GetComponent<Rigidbody>();
     }
-
+    
     public string GetSpellId()
     {
-        return "";
+        return SpellId;
     }
 
     public bool DoLockMouse()
@@ -26,17 +32,36 @@ public class MagnetismSpell : MonoBehaviour, ICastSpell
         return false;
     }
     
-    public void CastSpell(DiscreteMagicController magicController)
+    public void CastSpell()
     {
-        if (magicController.SpellId.Equals(mySpellPattern))
+
+        CameraManager.Instance.ToggleCamera(2);
+
+        if(ViewCamera!=null)
         {
-            isControlling = true;
-            collider.enabled = false;
-            rb.useGravity = false;
+            CameraManager.Instance.Cameras[2].transform.position = ViewCamera.position;
+            CameraManager.Instance.Cameras[2].transform.rotation = ViewCamera.rotation;
+            CameraManager.Instance.SetCameraLookAt(null);
+            CameraManager.Instance.SetCameraFollow(null);
+        }
+        else
+        {
+            CameraManager.Instance.SetCameraLookAt(transform);
         }
 
-        myMagicController = magicController;
-        myMagicController.OnEndSpell.AddListener(OnEndSpell);
+        InputManager.Instance.SwitchInputMap("SpellCasting");
+
+        isSpellActive = true;
+        if (isControlling)
+        {
+            MagicManager.Instance.EndSpell();
+        }
+        else
+        {
+            rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation;
+            isControlling = true;
+            rb.useGravity = false;
+        }
     }
 
     void Update()
@@ -47,12 +72,11 @@ public class MagnetismSpell : MonoBehaviour, ICastSpell
         }
     }
 
-    void OnEndSpell() //Activates when mouse is clicked during spell
+    public void EndSpell() //Activates when mouse is clicked during spell
     {
         isControlling = false;
-        collider.enabled = false;
         rb.useGravity = true;
-        myMagicController.OnEndSpell.RemoveListener(OnEndSpell);
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
     }
 
     void MoveObject()
@@ -60,5 +84,20 @@ public class MagnetismSpell : MonoBehaviour, ICastSpell
         float h = Input.GetAxis("Mouse X");
         float v = Input.GetAxis("Mouse Y");
         gameObject.transform.Translate(h, 0, v);
+    }
+    
+    public void OnInteract()
+    {
+        MagicManager.Instance.StartCasting(this);
+
+    }
+    public void OnStartHover()
+    {
+        
+    }
+
+    public void OnEndHover()
+    {
+        
     }
 }
