@@ -1,26 +1,44 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/*
-public class SleepSpell : MonoBehaviour, ICastSpell
-{
-    private string mySpellPattern = "sleep";
 
+public class SleepSpell : MonoBehaviour, ICastable
+{
+    private static string SpellId = "1596B";
+    public float InteractDist;
+    public float MaxRange => InteractDist;
     private bool isSpellActive = false;
-    public void CastSpell(DiscreteMagicController magicController) //Change so it uses IReceiveCast
+    public void CastSpell() //Change so it uses IReceiveCast
     {
-        if (magicController.SpellId.Equals(mySpellPattern))
-        {
-            isSpellActive = true;
+        isSpellActive = true;
             StartCoroutine(Sleeping());
-        }
     }
 
     IEnumerator Sleeping()
     {
         gameObject.GetComponent<EvilPanda>().Sleep();
         yield return new WaitForSeconds(5f);
-        gameObject.GetComponent<EvilPanda>().WakeUp();
+        //gameObject.GetComponent<EvilPanda>().WakeUp();
     }
-    
-}*/
+    public string GetSpellId()
+    {
+        return SpellId;
+    }
+    public void OnInteract()
+    {
+        MagicManager.Instance.StartCasting(this);
+
+    }
+    public void EndSpell()
+    {
+        throw new System.NotImplementedException();
+    }
+    public void OnEndHover()
+    {
+        throw new System.NotImplementedException();
+    }
+    public void OnStartHover()
+    {
+        throw new System.NotImplementedException();
+    }
+}

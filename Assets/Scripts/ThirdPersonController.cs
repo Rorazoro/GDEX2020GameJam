@@ -119,7 +119,6 @@ public class ThirdPersonController : MonoBehaviour {
         Vector3 pushDir = new Vector3 (hit.moveDirection.x, 0, hit.moveDirection.z);
         targetrb.velocity = pushDir * PushPower;
     }
-
     public void DetectClosestPanda (GameObject player) {
         float distanceToClosestPanda = Mathf.Infinity;
         Panda closest = null;
