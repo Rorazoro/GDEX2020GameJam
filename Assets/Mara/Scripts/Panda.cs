@@ -6,9 +6,12 @@ public class Panda : MonoBehaviour {
     void OnTriggerEnter (Collider col) {
         PlayerMovement player = col.GetComponent<PlayerMovement> ();
 
-        if (player != null) {
+        ThirdPersonController player2 = col.GetComponent<ThirdPersonController> ();
+
+        if (player != null || player2 != null) {
             Debug.Log ("Panda Collected");
-            player.CollectPanda (this.gameObject);
+           // player.CollectPanda (this.gameObject);
+            player2.CollectPanda (this.gameObject);
         }
     }
 }
