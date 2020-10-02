@@ -91,9 +91,8 @@ MonoBehaviour:
   IsCasting: 0
   IsSpellActive: 0
   NodePanel: {fileID: 0}
-  MoveCam: {fileID: 0}
-  CastingCam: {fileID: 0}
-  SpellCam: {fileID: 0}
+  UICamera: {fileID: 0}
+  MinTraceDistance: 0.1
   CurrentSpellId: 
 --- !u!114 &8812544051240462181
 MonoBehaviour:

@@ -8,14 +8,11 @@ public class MagicManager : SingletonBehaviour<MagicManager> {
     public bool IsCasting = false;
     public bool IsSpellActive = false;
     public GameObject NodePanel;
-    public GameObject MoveCam;
-    public GameObject CastingCam;
-    public GameObject SpellCam;
     public Camera UICamera;
     public float MinTraceDistance = 0.1f;
 
     private List<Transform> magicNodes = new List<Transform> ();
-    private List<Vector3> tracePoints = new List<Vector3>();
+    private List<Vector3> tracePoints = new List<Vector3> ();
     private LineRenderer lineRenderer;
     private ICastable CurrentSpell;
     [SerializeField]
@@ -37,9 +34,8 @@ public class MagicManager : SingletonBehaviour<MagicManager> {
             UpdateTrace ();
         } else if (!InputManager.Instance.DrawInput && IsCasting) {
             CheckForActiveSpell ();
-            if (startedDrawing)
-            {
-                EndCasting();
+            if (startedDrawing) {
+                EndCasting ();
             }
             if (IsSpellActive) {
                 EndCasting ();
@@ -54,8 +50,8 @@ public class MagicManager : SingletonBehaviour<MagicManager> {
             SpellId += node.name;
         }
 
-        var spellIds = new List<string>(CurrentSpellId.Split(','));
-        if (spellIds.Contains(SpellId)) {
+        var spellIds = new List<string> (CurrentSpellId.Split (','));
+        if (spellIds.Contains (SpellId)) {
             IsSpellActive = true;
         }
     }
@@ -67,7 +63,7 @@ public class MagicManager : SingletonBehaviour<MagicManager> {
     public void StartCasting (ICastable spellObject) {
         if (!IsCasting) {
             startedDrawing = false;
-            InputManager.Instance.SwitchCursorLockState(CursorLockMode.Confined);
+            InputManager.Instance.SwitchCursorLockState (CursorLockMode.Confined);
             CurrentSpell = spellObject;
             CurrentSpellId = spellObject.GetSpellId ();
             IsCasting = true;
@@ -75,7 +71,7 @@ public class MagicManager : SingletonBehaviour<MagicManager> {
             CameraManager.Instance.ToggleCamera (1);
             NodePanel.SetActive (true);
             magicNodes.Clear ();
-            tracePoints.Clear();
+            tracePoints.Clear ();
             lineRenderer.positionCount = 0;
             lineRenderer.enabled = true;
         }
@@ -93,15 +89,14 @@ public class MagicManager : SingletonBehaviour<MagicManager> {
     }
 
     public void EndSpell () {
-        if (IsSpellActive)
-        {
+        if (IsSpellActive) {
             IsSpellActive = false;
-            CurrentSpell.EndSpell();
+            CurrentSpell.EndSpell ();
             CurrentSpell = null;
             CurrentSpellId = string.Empty;
-            CameraManager.Instance.ToggleCamera(0);
-            InputManager.Instance.SwitchInputMap("Player");
-            InputManager.Instance.SwitchCursorLockState(CursorLockMode.Locked);
+            CameraManager.Instance.ToggleCamera (0);
+            InputManager.Instance.SwitchInputMap ("Player");
+            InputManager.Instance.SwitchCursorLockState (CursorLockMode.Locked);
         }
     }
 
@@ -119,35 +114,25 @@ public class MagicManager : SingletonBehaviour<MagicManager> {
         //    lineNodes.Add (results[0].gameObject.transform);
         //}
 
-        Ray ray = UICamera.ScreenPointToRay(mousePosition);
+        Ray ray = UICamera.ScreenPointToRay (mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
-        {
-            if (hit.collider.gameObject.CompareTag("MagicNode"))
-            {
-                if (magicNodes.Count == 0 || !magicNodes.Contains(hit.collider.transform))
-                {
-                    magicNodes.Add(hit.collider.transform);
-                    tracePoints.Add(hit.collider.transform.position + hit.transform.forward * .2f);
+        if (Physics.Raycast (ray, out hit)) {
+            if (hit.collider.gameObject.CompareTag ("MagicNode")) {
+                if (magicNodes.Count == 0 || !magicNodes.Contains (hit.collider.transform)) {
+                    magicNodes.Add (hit.collider.transform);
+                    tracePoints.Add (hit.collider.transform.position + hit.transform.forward * .2f);
                 }
-            }
-            else if (tracePoints.Count == 0 || Vector3.Distance(hit.point, tracePoints[tracePoints.Count - 1]) > MinTraceDistance)
-            {
+            } else if (tracePoints.Count == 0 || Vector3.Distance (hit.point, tracePoints[tracePoints.Count - 1]) > MinTraceDistance) {
                 //Order of if statement logic here is important so we dont try to access a point if tracepoints<1
-                tracePoints.Add(hit.point+hit.transform.forward*.2f);
+                tracePoints.Add (hit.point + hit.transform.forward * .2f);
             }
         }
-            
 
-        if (Physics.Raycast(ray, out hit) &&
-            hit.collider.gameObject.CompareTag("MagicNode") &&
-            (magicNodes.Count == 0 || !magicNodes.Contains(hit.collider.transform)))
-        {
-            magicNodes.Add(hit.collider.transform);
+        if (Physics.Raycast (ray, out hit) &&
+            hit.collider.gameObject.CompareTag ("MagicNode") &&
+            (magicNodes.Count == 0 || !magicNodes.Contains (hit.collider.transform))) {
+            magicNodes.Add (hit.collider.transform);
         }
-
-
-
 
         //for (int i = 0; i< magicNodes.Count; i++)
         //{
