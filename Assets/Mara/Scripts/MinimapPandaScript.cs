@@ -51,7 +51,7 @@ public class MinimapPandaScript : MonoBehaviour {
     public void MarkPandaLocation (Vector3 pandaLocation) {
         GameObject redXClone = Instantiate (redX, pandaLocation, Quaternion.Euler (0, 0, 0)).gameObject;
         redXClone.transform.SetParent (PandaLocation);
-        redXClone.transform.localScale = new Vector3 (0.5f, 0.5f, 0.5f);
+        redXClone.transform.localScale = new Vector3 (2f, 2f, 2f);
 
         redXClone.transform.position = new Vector3 (pandaLocation.x, 70f, pandaLocation.z);
         redXClone.transform.Rotate (90, 0, 0);
