@@ -14,7 +14,10 @@ public class ThirdPersonController : MonoBehaviour {
     [Range (0f, 10f)] public float Gravity = 5f;
     [Range (0f, 10f)] public float PushPower = 5f;
     public bool InvertY = false;
+
     public MinimapPandaScript minimapPandaScript;
+    public MinimapScript minimapScript;
+
     private void Awake () {
         _controller = GetComponent<CharacterController> ();
         Cursor.lockState = CursorLockMode.Locked;
@@ -23,6 +26,15 @@ public class ThirdPersonController : MonoBehaviour {
     private void Update () {
         Rotate ();
         Move ();
+        if (Input.GetKey (KeyCode.Space)) {
+            DetectClosestPanda (this.gameObject);
+        }
+        if (Input.GetKey (KeyCode.Equals)) {
+            minimapScript.ZoomIn ();
+        }
+        if (Input.GetKey (KeyCode.Minus)) {
+            minimapScript.ZoomOut ();
+        }
     }
 
     private void Rotate () {
@@ -107,8 +119,6 @@ public class ThirdPersonController : MonoBehaviour {
         Vector3 pushDir = new Vector3 (hit.moveDirection.x, 0, hit.moveDirection.z);
         targetrb.velocity = pushDir * PushPower;
     }
-    
-    
     public void DetectClosestPanda (GameObject player) {
         float distanceToClosestPanda = Mathf.Infinity;
         Panda closest = null;

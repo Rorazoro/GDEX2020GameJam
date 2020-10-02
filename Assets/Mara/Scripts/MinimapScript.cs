@@ -17,7 +17,7 @@ public class MinimapScript : MonoBehaviour {
         float size = this.GetComponent<Camera> ().orthographicSize;
 
         if (size > 10) {
-            size = size - 5;
+            size = size - 10;
             this.GetComponent<Camera> ().orthographicSize = size;
         }
     }
@@ -25,8 +25,8 @@ public class MinimapScript : MonoBehaviour {
     public void ZoomOut () {
         float size = this.GetComponent<Camera> ().orthographicSize;
 
-        if (size < 150) {
-            size = size + 5;
+        if (size < 600) {
+            size = size + 10;
             this.GetComponent<Camera> ().orthographicSize = size;
         }
     }
