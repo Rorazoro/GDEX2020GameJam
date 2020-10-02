@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent (typeof (Rigidbody))]
 [RequireComponent (typeof (Outline))]
 public class LevitatableObject : MonoBehaviour, ICastable {
-    static string SpellId = "159AB";
+    static string SpellId = "157,751";
 
     public float InteractDist;
     public float YPosMin, YPosMax;
