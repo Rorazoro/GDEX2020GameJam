@@ -11,6 +11,7 @@ public class MagicManager : SingletonBehaviour<MagicManager> {
     public GameObject MoveCam;
     public GameObject CastingCam;
     public GameObject SpellCam;
+    public Camera UICamera;
 
     private List<Transform> lineNodes = new List<Transform> ();
     private LineRenderer lineRenderer;
@@ -103,14 +104,23 @@ public class MagicManager : SingletonBehaviour<MagicManager> {
         Vector2 mousePosition = InputManager.Instance.PointInput;
 
         //check if we need to add a new node to out line definition
-        var eventData = new PointerEventData (EventSystem.current);
-        eventData.position = mousePosition;
-        var results = new List<RaycastResult> ();
-        EventSystem.current.RaycastAll (eventData, results);
-        if (results.Count > 0 &&
-            results[0].gameObject.CompareTag ("MagicNode") &&
-            (lineNodes.Count == 0 || results[0].gameObject.transform != lineNodes[lineNodes.Count - 1])) {
-            lineNodes.Add (results[0].gameObject.transform);
+        //var eventData = new PointerEventData (EventSystem.current);
+        //eventData.position = mousePosition;
+        //var results = new List<RaycastResult> ();
+        //EventSystem.current.RaycastAll (eventData, results);
+        //if (results.Count > 0 &&
+        //    results[0].gameObject.CompareTag ("MagicNode") &&
+        //    (lineNodes.Count == 0 || results[0].gameObject.transform != lineNodes[lineNodes.Count - 1])) {
+        //    lineNodes.Add (results[0].gameObject.transform);
+        //}
+
+        Ray ray = UICamera.ScreenPointToRay(mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit) &&
+            hit.collider.gameObject.CompareTag("MagicNode") &&
+            (lineNodes.Count == 0 || !lineNodes.Contains(hit.collider.transform)))
+        {
+                lineNodes.Add (hit.collider.transform);
         }
 
         //generate line to render
@@ -122,8 +132,8 @@ public class MagicManager : SingletonBehaviour<MagicManager> {
 
         Vector3 screenPoint = mousePosition;
         screenPoint.z = 4.0f;
-        transform.position = Camera.main.ScreenToWorldPoint (screenPoint);
-        linePoints.Add (Camera.main.ScreenToWorldPoint (screenPoint));
+        //transform.position = Camera.main.ScreenToWorldPoint (screenPoint);
+        linePoints.Add (UICamera.ScreenToWorldPoint (screenPoint));
 
         lineRenderer.positionCount = linePoints.Count;
         lineRenderer.SetPositions (linePoints.ToArray ());

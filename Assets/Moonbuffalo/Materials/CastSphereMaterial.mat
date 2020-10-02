@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-715704043472482464
+--- !u!114 &-8655217596452063454
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CastMaterial
-  m_Shader: {fileID: -6465566751694194690, guid: d1fc1a33c2389504aa6e2f9926685985, type: 3}
+  m_Name: CastSphereMaterial
+  m_Shader: {fileID: -6465566751694194690, guid: f75d88370bd09b64aa68bed219aeceaf, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -75,7 +75,6 @@ Material:
     - _OcclusionStrength: 1
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _SampleGI: 0
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -84,9 +83,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_71EED297: {r: 1, g: 0.8367779, b: 0.18301877, a: 0}
-    - Color_981306C9: {r: 0.95283014, g: 0.6891852, b: 0.10247407, a: 0}
-    - _BaseColor: {r: 0.09811318, g: 0.78599286, b: 1, a: 0.5803922}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
