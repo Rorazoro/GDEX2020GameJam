@@ -5,11 +5,12 @@ using UnityEngine.InputSystem;
 [RequireComponent (typeof (CharacterController))]
 public class ThirdPersonController : MonoBehaviour {
     private CharacterController _controller;
+    [SerializeField]
     private float verticalMovement;
     private Vector3 followTransformAngles;
 
     public GameObject followTransform;
-    [Range (0f, 10f)] public float MoveSpeed = 6f;
+    [Range (0f, 20f)] public float MoveSpeed = 10f;
     [Range (0f, 10f)] public float LookSpeed = 5f;
     [Range (0f, 10f)] public float Gravity = 5f;
     [Range (0f, 10f)] public float PushPower = 5f;
@@ -71,9 +72,9 @@ public class ThirdPersonController : MonoBehaviour {
         //Calculate vertical movement and gravity
         if (_controller.isGrounded) {
             verticalMovement = 0;
+        } else {
+            verticalMovement -= Gravity;
         }
-
-        verticalMovement -= Gravity;
         position.y = verticalMovement;
 
         //Check for steps
