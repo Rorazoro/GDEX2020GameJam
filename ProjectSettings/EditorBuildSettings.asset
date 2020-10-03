@@ -5,10 +5,17 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
-
+  - enabled: 1
+    path: Assets/Mara/Scenes/MainMenu.unity
+    guid: 4f426af375c1d174dbe7f3573667cce4
+  - enabled: 1
+    path: Assets/Mara/Scenes/Story.unity
+    guid: d3fa9ea1b19fc78449000da1333ee882
+  - enabled: 1
+    path: Assets/Mara/Scenes/AllPuzzles-moon.unity
+    guid: 18b4791f9468bbb4593f5453048d1299
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 2ac20353642af084c8f3c2558f1c9903, type: 2}
-
