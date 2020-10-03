@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -32,6 +33,8 @@ public class InputManager : SingletonBehaviour<InputManager> {
     private bool _drawInput;
     [SerializeField]
     private bool _endCastingInput;
+    [SerializeField]
+    private Vector2 _spellDeltaInput;
 
     //Debug ActionMap
     [SerializeField]
@@ -61,6 +64,7 @@ public class InputManager : SingletonBehaviour<InputManager> {
     public Vector2 PointInput { get => _pointInput; }
     public bool DrawInput { get => _drawInput; }
     public bool EndCastingInput { get => _endCastingInput; }
+    public Vector2 SpellDeltaInput { get => _spellDeltaInput; }
 
     //Debug ActionMap
     public bool ToggleConsoleInput { get => _toggleConsoleInput; }
@@ -96,6 +100,9 @@ public class InputManager : SingletonBehaviour<InputManager> {
                 break;
             case "Point":
                 OnPoint (context);
+                break;
+            case "SpellDelta":
+                OnSpellDelta (context);
                 break;
             case "ToggleConsole":
                 OnToggleConsole (context);
@@ -164,6 +171,9 @@ public class InputManager : SingletonBehaviour<InputManager> {
         } else if (context.canceled) {
             _endCastingInput = false;
         }
+    }
+    private void OnSpellDelta (InputAction.CallbackContext context) {
+        _spellDeltaInput = context.ReadValue<Vector2> ();
     }
 
     //Debug ActionMap

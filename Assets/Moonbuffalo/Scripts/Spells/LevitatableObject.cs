@@ -50,7 +50,7 @@ public class LevitatableObject : MonoBehaviour, ICastable {
     void Update () {
         outline.enabled = isHovering || isLevitating;
         if (isSpellActive && isLevitating) {
-            float maxDeltaMovement = Time.deltaTime * LevitateRate * InputManager.Instance.PointInput.y;
+            float maxDeltaMovement = Time.deltaTime * LevitateRate * InputManager.Instance.SpellDeltaInput.y;
 
             float newY = Mathf.Clamp (transform.localPosition.y + maxDeltaMovement, YPosMin, YPosMax);
             transform.localPosition = new Vector3 (transform.localPosition.x, newY, transform.localPosition.z);

@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/InputControls.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/_Settings/InputControls.inputactions'
 
 using System;
 using System.Collections;
@@ -35,7 +35,7 @@ public class @InputControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Toggle Console"",
+                    ""name"": ""ToggleConsole"",
                     ""type"": ""Button"",
                     ""id"": ""d0ebd608-2957-4a13-956a-d3a60655a157"",
                     ""expectedControlType"": ""Button"",
@@ -232,7 +232,7 @@ public class @InputControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Toggle Console"",
+                    ""action"": ""ToggleConsole"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -273,7 +273,7 @@ public class @InputControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Toggle Console"",
+                    ""name"": ""ToggleConsole"",
                     ""type"": ""Button"",
                     ""id"": ""d9b68e77-0258-47bc-9c39-46450d40daf2"",
                     ""expectedControlType"": ""Button"",
@@ -779,7 +779,7 @@ public class @InputControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Toggle Console"",
+                    ""action"": ""ToggleConsole"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -814,10 +814,18 @@ public class @InputControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Toggle Console"",
+                    ""name"": ""ToggleConsole"",
                     ""type"": ""Button"",
                     ""id"": ""df01e262-1c33-484e-8ae1-4756a03af9f6"",
                     ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""SpellDelta"",
+                    ""type"": ""Value"",
+                    ""id"": ""2f1aaabd-1f33-4dff-9ca4-916ca0da4a34"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
                 }
@@ -852,7 +860,7 @@ public class @InputControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Toggle Console"",
+                    ""action"": ""ToggleConsole"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -863,6 +871,17 @@ public class @InputControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse;Touch"",
+                    ""action"": ""SpellDelta"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5392f6f0-153b-4d06-89af-625bf4df2344"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Point"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -882,7 +901,7 @@ public class @InputControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Toggle Console"",
+                    ""name"": ""ToggleConsole"",
                     ""type"": ""Button"",
                     ""id"": ""a252ce88-a175-4d06-901d-b755eaf36759"",
                     ""expectedControlType"": ""Button"",
@@ -914,7 +933,7 @@ public class @InputControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Toggle Console"",
+                    ""action"": ""ToggleConsole"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -1021,13 +1040,13 @@ public class @InputControls : IInputActionCollection, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
-        m_Player_ToggleConsole = m_Player.FindAction("Toggle Console", throwIfNotFound: true);
+        m_Player_ToggleConsole = m_Player.FindAction("ToggleConsole", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Cast = m_Player.FindAction("Cast", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
-        m_UI_ToggleConsole = m_UI.FindAction("Toggle Console", throwIfNotFound: true);
+        m_UI_ToggleConsole = m_UI.FindAction("ToggleConsole", throwIfNotFound: true);
         m_UI_Submit = m_UI.FindAction("Submit", throwIfNotFound: true);
         m_UI_Cancel = m_UI.FindAction("Cancel", throwIfNotFound: true);
         m_UI_Point = m_UI.FindAction("Point", throwIfNotFound: true);
@@ -1042,11 +1061,12 @@ public class @InputControls : IInputActionCollection, IDisposable
         m_SpellCasting_Draw = m_SpellCasting.FindAction("Draw", throwIfNotFound: true);
         m_SpellCasting_EndCasting = m_SpellCasting.FindAction("EndCasting", throwIfNotFound: true);
         m_SpellCasting_Point = m_SpellCasting.FindAction("Point", throwIfNotFound: true);
-        m_SpellCasting_ToggleConsole = m_SpellCasting.FindAction("Toggle Console", throwIfNotFound: true);
+        m_SpellCasting_ToggleConsole = m_SpellCasting.FindAction("ToggleConsole", throwIfNotFound: true);
+        m_SpellCasting_SpellDelta = m_SpellCasting.FindAction("SpellDelta", throwIfNotFound: true);
         // Debug
         m_Debug = asset.FindActionMap("Debug", throwIfNotFound: true);
         m_Debug_Return = m_Debug.FindAction("Return", throwIfNotFound: true);
-        m_Debug_ToggleConsole = m_Debug.FindAction("Toggle Console", throwIfNotFound: true);
+        m_Debug_ToggleConsole = m_Debug.FindAction("ToggleConsole", throwIfNotFound: true);
         m_Debug_PreviousCommand = m_Debug.FindAction("PreviousCommand", throwIfNotFound: true);
         m_Debug_NextCommand = m_Debug.FindAction("NextCommand", throwIfNotFound: true);
     }
@@ -1280,6 +1300,7 @@ public class @InputControls : IInputActionCollection, IDisposable
     private readonly InputAction m_SpellCasting_EndCasting;
     private readonly InputAction m_SpellCasting_Point;
     private readonly InputAction m_SpellCasting_ToggleConsole;
+    private readonly InputAction m_SpellCasting_SpellDelta;
     public struct SpellCastingActions
     {
         private @InputControls m_Wrapper;
@@ -1288,6 +1309,7 @@ public class @InputControls : IInputActionCollection, IDisposable
         public InputAction @EndCasting => m_Wrapper.m_SpellCasting_EndCasting;
         public InputAction @Point => m_Wrapper.m_SpellCasting_Point;
         public InputAction @ToggleConsole => m_Wrapper.m_SpellCasting_ToggleConsole;
+        public InputAction @SpellDelta => m_Wrapper.m_SpellCasting_SpellDelta;
         public InputActionMap Get() { return m_Wrapper.m_SpellCasting; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1309,6 +1331,9 @@ public class @InputControls : IInputActionCollection, IDisposable
                 @ToggleConsole.started -= m_Wrapper.m_SpellCastingActionsCallbackInterface.OnToggleConsole;
                 @ToggleConsole.performed -= m_Wrapper.m_SpellCastingActionsCallbackInterface.OnToggleConsole;
                 @ToggleConsole.canceled -= m_Wrapper.m_SpellCastingActionsCallbackInterface.OnToggleConsole;
+                @SpellDelta.started -= m_Wrapper.m_SpellCastingActionsCallbackInterface.OnSpellDelta;
+                @SpellDelta.performed -= m_Wrapper.m_SpellCastingActionsCallbackInterface.OnSpellDelta;
+                @SpellDelta.canceled -= m_Wrapper.m_SpellCastingActionsCallbackInterface.OnSpellDelta;
             }
             m_Wrapper.m_SpellCastingActionsCallbackInterface = instance;
             if (instance != null)
@@ -1325,6 +1350,9 @@ public class @InputControls : IInputActionCollection, IDisposable
                 @ToggleConsole.started += instance.OnToggleConsole;
                 @ToggleConsole.performed += instance.OnToggleConsole;
                 @ToggleConsole.canceled += instance.OnToggleConsole;
+                @SpellDelta.started += instance.OnSpellDelta;
+                @SpellDelta.performed += instance.OnSpellDelta;
+                @SpellDelta.canceled += instance.OnSpellDelta;
             }
         }
     }
@@ -1459,6 +1487,7 @@ public class @InputControls : IInputActionCollection, IDisposable
         void OnEndCasting(InputAction.CallbackContext context);
         void OnPoint(InputAction.CallbackContext context);
         void OnToggleConsole(InputAction.CallbackContext context);
+        void OnSpellDelta(InputAction.CallbackContext context);
     }
     public interface IDebugActions
     {
