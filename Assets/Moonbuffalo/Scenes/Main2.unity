@@ -295,9 +295,21 @@ PrefabInstance:
       propertyPath: MaxDistance
       value: 450
       objectReference: {fileID: 0}
+    - target: {fileID: 7869068144613312827, guid: 670d2649e7d8e7340aeadc0327ec80ee, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7869068144673871794, guid: 670d2649e7d8e7340aeadc0327ec80ee, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7869068144673871804, guid: 670d2649e7d8e7340aeadc0327ec80ee, type: 3}
       propertyPath: MaxDistance
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 7869068144714903256, guid: 670d2649e7d8e7340aeadc0327ec80ee, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7869068144714903258, guid: 670d2649e7d8e7340aeadc0327ec80ee, type: 3}
       propertyPath: MaxDistance
@@ -326,6 +338,10 @@ PrefabInstance:
     - target: {fileID: 7869068145444113832, guid: 670d2649e7d8e7340aeadc0327ec80ee, type: 3}
       propertyPath: m_LocalPosition.x
       value: 134
+      objectReference: {fileID: 0}
+    - target: {fileID: 7869068145444113833, guid: 670d2649e7d8e7340aeadc0327ec80ee, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7869068145444113835, guid: 670d2649e7d8e7340aeadc0327ec80ee, type: 3}
       propertyPath: MaxDistance
@@ -10824,10 +10840,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 605017212}
     m_Modifications:
-    - target: {fileID: 7121847238498912923, guid: d7dc193af7d1d9540be475522db003d7, type: 3}
-      propertyPath: m_RootOrder
-      value: 22
-      objectReference: {fileID: 0}
     - target: {fileID: 1549431047095804266, guid: eca7aa4c26c28454bb4dd3ae0b13c487, type: 3}
       propertyPath: m_RootOrder
       value: 28
@@ -10867,6 +10879,10 @@ PrefabInstance:
     - target: {fileID: 4377521224490398430, guid: eca7aa4c26c28454bb4dd3ae0b13c487, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7121847238498912923, guid: d7dc193af7d1d9540be475522db003d7, type: 3}
+      propertyPath: m_RootOrder
+      value: 22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7dc193af7d1d9540be475522db003d7, type: 3}
