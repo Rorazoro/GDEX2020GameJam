@@ -84,6 +84,8 @@ public class AudioHandler : MonoBehaviour
         if (num * 4 == totalPandas)
         {
             quarterCompleteAudio.volume = quarterVolume;
+            fireAudio.volume = fireVolume;
+            waterAudio.volume = waterVolume;
         }
     }
 
@@ -92,6 +94,7 @@ public class AudioHandler : MonoBehaviour
         if (num * 2 == totalPandas)
         {
             halfCompleteAudio.volume = halfVolume;
+            forestAudio.volume = forestVolume;
         }
     }
 
@@ -100,6 +103,7 @@ public class AudioHandler : MonoBehaviour
         if ((totalPandas - num) * 4 == totalPandas)
         {
             threeQuartersCompleteAudio.volume = thirdVolume;
+            stoneAudio.volume = stoneVolume;
         }
     }
 
