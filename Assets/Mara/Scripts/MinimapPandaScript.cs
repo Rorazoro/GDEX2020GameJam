@@ -18,7 +18,7 @@ public class MinimapPandaScript : MonoBehaviour {
     void Start () {
         PandaContainer.Rotate (90, 0, 0);
         instantiateInCircle (pointPrefab, new Vector3 (0, 0, 0), TotalPandaNumber);
-
+        GameObject.FindObjectOfType<AudioHandler>().GetComponent<AudioHandler>().SetPandaNum(TotalPandaNumber);
     }
 
     public void instantiateInCircle (GameObject obj, Vector3 location, int howMany) {
@@ -33,6 +33,7 @@ public class MinimapPandaScript : MonoBehaviour {
 
     public void AddPanda () {
         CollectedPandaCount++;
+        GameObject.FindObjectOfType<AudioHandler>().GetComponent<AudioHandler>().PandaFound(CollectedPandaCount);
         if (CollectedPandaCount <= TotalPandaNumber)
             PandaProgress (CollectedPandaCount);
     }
