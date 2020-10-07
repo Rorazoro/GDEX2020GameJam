@@ -6,16 +6,19 @@ using UnityEngine;
 public class RockWaterfallBlock : MonoBehaviour
 {
     [SerializeField] private MoveWater[] lakeWater;
+    [SerializeField] private GameObject PandaToEnable;
 
-    private void OnTriggerExit(Collider other)
+
+    private void OnTriggerEnter(Collider other)
     {
+
         if (other.gameObject.tag == "Rock")
         {
             foreach (var lake in lakeWater)
             {
                 lake.WaterMovement();
             }
-            //ToDo: Trigger Panda
+            PandaToEnable.SetActive(true);
         }
     }
 }
